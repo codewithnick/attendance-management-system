@@ -1,2 +1,3 @@
 Enter name and roll no here
-Nikhil Singh SYCS45
+SYCS45 mNikhil Singh 
+SYCS7 Shivam Chaudhary
