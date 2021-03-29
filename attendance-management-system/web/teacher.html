@@ -14,20 +14,23 @@ and open the template in the editor.
         <div>
         
             <h2>Login</h2>
-            <form action="studentLogin.jsp">
+            <form action="teacherLogin.jsp">
                 Email:<input type="text" name="email" placeholder="jonsmith@gmail.com"/>
+                <br>
                 Password:<input type="password" name="password" placeholder="**********"/>
+                <br>
+                <input type="submit" value="Login"/>
             </form>
         </div>
         
         <div>
-            <form action="studentRegister.jsp">
+            <form action="teacherRegister.jsp">
         Name:<input type="text" name="name"/>
-        
+        <br>
         Email:<input type="email" name="email"/>
-
+<br>
         Password:<input type="password" name="password"/>
-
+<br>
         Dept:<select name="Dept" id="dept">
   <option value="CS">CS</option>
   <option value="BMS">BMS</option>
@@ -35,13 +38,13 @@ and open the template in the editor.
   <option value="IT">IT</option>
 </select>
 
-        Rollno:<input type="text" name="Rollno"/>
+      <br>
 
-        Sem:<input type="text" name="sem"/>
+        
         
         Contact:<input type="text" name="contact"/>
-
-
+<br>
+        <input type="submit" value="register"/>
             </form>
         </div>
     </body>
