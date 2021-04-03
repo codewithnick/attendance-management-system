@@ -1,0 +1,45 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Mar 27, 2021, 8:53:33 PM
+    Author     : PRAJAPATI GAURAV
+*/
+
+.logo{
+    float: left;
+    color: whitesmoke;
+    margin-left: 20px;
+    margin-top: 20px;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.navItem ul li{
+    padding: 10px 10px 10px 30px;
+    list-style: none;
+    display: inline-block;
+    padding-right: 40px;
+        
+}
+.navItem ul li a{
+    text-decoration: none;
+    font-size: 18px;
+    color: white;
+}
+.navItem ul{
+    float: right;
+}
+.navItem{
+    height: 50px;
+    background-color: black;
+    color: white;
+}
+
+.tables table{ 
+width: 100%;
+text-align: center;
+color:red;
+}
