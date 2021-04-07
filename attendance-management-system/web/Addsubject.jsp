@@ -4,6 +4,7 @@
     Author     : PRAJAPATI GAURAV
 --%>
 
+<%@page import="java.sql.ResultSet"%>
 <%@page import="java.sql.PreparedStatement"%>
 <%@ include file="header.jsp" %>
 <% String message="";
@@ -12,12 +13,22 @@
         String DOW=request.getParameter("RDay");
         int Sem=Integer.parseInt(request.getParameter("Rsemester"));
        // Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/attendance?useSSL=false","root","");
-        String sql="insert into subject(Subject,DayOfWeek,TId,Sem) values(?,?,?,?)";
+        String sql="insert into subject( SubId,Subject,DayOfWeek,TId,Sem) values(?,?,?,?,?)";
             PreparedStatement ps=conn.prepareStatement(sql);
-            ps.setString(1,Sub);
-            ps.setString(2,DOW);
-            ps.setInt(3,201);
-            ps.setInt(4,Sem);
+            String sql1="select max(SubId) as max from subject";
+           PreparedStatement ps1=conn.prepareStatement(sql1);
+            ResultSet newid=ps1.executeQuery();
+            int Newid=1;
+            if(newid.next())
+            {
+                Newid=newid.getInt(1)+1;
+            }
+            //System.out.println(Newid+" new id");
+            ps.setInt(1,Newid);
+            ps.setString(2,Sub);
+            ps.setString(3,DOW);
+            ps.setInt(4,201);
+            ps.setInt(5,Sem);
             int r=ps.executeUpdate();
             if(r>0)
             {
