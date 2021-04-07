@@ -33,7 +33,7 @@ else{
 
 <%-- delete attendance --%>
 <%
-if(request.getParameter("sid")!=null){
+if((request.getParameter("sid")!=null)& (request.getParameter("q")!=null)){
     int SubId;
     SubId=Integer.parseInt(request.getParameter("sid"));
     String sql1="delete from subject where SubId=?";
