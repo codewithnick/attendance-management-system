@@ -22,13 +22,7 @@
             //default will change later
             int sid=101;
             
-            //getting current day of week ,date,time
-            Calendar calendar = Calendar.getInstance();
-            Date date = calendar.getTime();         
-            String Dow=new SimpleDateFormat("EEEE", Locale.ENGLISH).format(date.getTime());
-            long now = System.currentTimeMillis();
-            Time sqlTime = new Time(now);  
-            java.sql.Date sqlDate = new java.sql.Date(date.getTime());
+           
             
             //find sem through sid
             PreparedStatement semps=conn.prepareStatement("Select sem from student where SId=?  ");
@@ -118,7 +112,11 @@
                 <td><%=subject%></td>
                 <td><%=Dow%></td>
                 <td><%=sem%></td>
-                <td>Mark</td>
+                <td>
+                    <a href="./MarkAttendance.jsp?SId=<%=sid%>&SubId=<%=Subjectid%>">
+                        Mark
+                    </a>
+                </td>
             </tr>
         <%
         }
