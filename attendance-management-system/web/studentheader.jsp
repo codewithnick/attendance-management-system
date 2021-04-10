@@ -16,6 +16,13 @@
 <%@page import="java.sql.Connection"%>
 <%
     Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/attendance?useSSL=false","root","root");
+     //getting current day of week ,date,time
+            Calendar calendar = Calendar.getInstance();
+            Date date = calendar.getTime();         
+            String Dow=new SimpleDateFormat("EEEE", Locale.ENGLISH).format(date.getTime());
+            long now = System.currentTimeMillis();
+            Time sqlTime = new Time(now);  
+            java.sql.Date sqlDate = new java.sql.Date(date.getTime());
 %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
