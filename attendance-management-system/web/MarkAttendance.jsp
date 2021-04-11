@@ -22,8 +22,11 @@
     </head>
     <body>
      <%
+
                 int sid=Integer.parseInt(request.getParameter("SId"));
                 int subjectid=Integer.parseInt(request.getParameter("SubId"));
+
+
                 
                 
                 
@@ -36,7 +39,10 @@
                 String day="";
                 int a_id=0;
                 boolean bool=false;
+
                 Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/Attendance?useSSL=false","root","root");
+                Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/Attendance?useSSL=false","root","SYCS");
+
                 
                 Calendar calendar = Calendar.getInstance();
                 Date date = calendar.getTime();      
@@ -68,9 +74,12 @@
                 if(tea.next()){
                 tname=tea.getString("TName");}
                                   
+
                 PreparedStatement a=conn.prepareStatement("Select * from Attendance where SId=? and SubId=?");
                 a.setInt(1,sid);
                a.setInt(2,subjectid);
+
+
                 ResultSet re=a.executeQuery();
                 if(re.next()){
                 a_id=re.getInt("AId");}
@@ -82,7 +91,9 @@
                  p.setInt(3,a_id);
                  int mark=p.executeUpdate();              
                 %>
+
                 <div><%=sid%><%=subjectid%></div>
+
              <table border="1">       
             <tr>
                 <th>NAME</th>
@@ -107,5 +118,7 @@
             </tr>         
         </table>           
 
+
     </body>
 </html>
+
