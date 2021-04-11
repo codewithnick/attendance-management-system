@@ -4,6 +4,7 @@
     Author     : Sophia Dcruz
 --%>
 
+<%@page import="java.sql.SQLException"%>
 <%@page import="java.sql.PreparedStatement"%>
 <%@page import="java.sql.DriverManager"%>
 <%@page import="java.sql.Connection"%>
@@ -26,26 +27,35 @@
                     <th>Attendance</th>
                     <th>Student Id</th>
                     <th>Subject ID</th>
+                    <th>Delete Record</th>
                     </tr>
             
        <% 
           String txt=request.getParameter("txt_search");
           String dropdown=request.getParameter("search");
-            Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/attendance?useSSL=false","root","Spd@2001");
+        String a;
+        if (request.getParameter("delete") == null)
+    a = "";
+else
+    a = request.getParameter("delete");
+
+   
+
+            Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/attendance?useSSL=false","root","root");
             PreparedStatement ps;
             ResultSet rs;
             if(dropdown.equals("name")){
-            ps = con.prepareStatement("Select * from Attendance where SId =(Select SId from Student where SName= ?) Order by Attendance desc");
+            ps = con.prepareStatement("Select * from Attendance where SId in(Select SId from Student where SName= ?) Order by Attendance desc");            
             ps.setString(1,txt);
-            rs=ps.executeQuery();
+            rs=ps.executeQuery(); 
      }
             else if(dropdown.equals("rollno")){
-            ps = con.prepareStatement("Select * from Attendance where SId =(Select SId from Student where RollNo= ?) Order by Attendance desc");
+            ps = con.prepareStatement("Select * from Attendance where SId in (Select SId from Student where RollNo= ?) Order by Attendance desc");
             ps.setString(1,txt);
             rs=ps.executeQuery();
      }
             else if(dropdown.equals("subject")){
-            ps = con.prepareStatement("Select * from Attendance where SubId =(Select SubId from Subject where Subject= ?) Order by Attendance desc");
+            ps = con.prepareStatement("Select * from Attendance where SubId in (Select SubId from Subject where Subject= ?) Order by Attendance desc");
             ps.setString(1,txt);
             rs=ps.executeQuery();
      }
@@ -53,23 +63,47 @@
             ps = con.prepareStatement("Select * from Attendance where Date =? Order by Attendance desc");
             ps.setString(1,txt);
             rs=ps.executeQuery();
-            }
-           
-       while(rs.next()){
+            } 
+        PreparedStatement del = con.prepareStatement("Delete from Attendance where AId=? ");
+         if(a != null){
+     /*   deleteRecord(Integer.parseInt(a),del); */
+    }
+       int record;%>
+            <%!
+               
+           public void deleteRecord(int aid, PreparedStatement del){
+
+           try{
+            del.setInt(1,aid);
+            del.executeUpdate();
+}
+    catch(SQLException e){
+        System.out.println("Exception");
+}
+       
+} %>
+    <%   while(rs.next()){
                  String temp;
                  if(rs.getInt("attendance")==1){
                       temp="Present";
-    }
+                 }
                  else{
-        temp="Absent";
+                     temp="Absent";
         }
-%>
-    <tr><td><%=rs.getInt("AId")%></td>
+                 int aid=rs.getInt("AId");
+                 String aidstring=String.valueOf(aid);
+%><form action="#">   
+    <tr><td><%= aidstring%></td>
     <td><%=rs.getString("Date")%></td>
     <td><%=rs.getString("Time")%></td>
     <td><%= temp %></td>
    <td><%=rs.getInt("SId")%></td>
-    <td><%=rs.getInt("SubId")%></td></tr>
+    <td><%=rs.getInt("SubId")%></td>
+    <td>     
+        <input type="submit" value="<%=aidstring%>" name="delete" onClick="<%
+       
+        %>" >
+</td></tr></form>
     <%
 }   %>
   </table>
