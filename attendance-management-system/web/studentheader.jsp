@@ -15,7 +15,7 @@
 <%@page import="java.sql.PreparedStatement"%>
 <%@page import="java.sql.Connection"%>
 <%
-    Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/attendance?useSSL=false","root","root");
+    Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/attendance?useSSL=false","root","SYCS");
      //getting current day of week ,date,time
             Calendar calendar = Calendar.getInstance();
             Date date = calendar.getTime();         
