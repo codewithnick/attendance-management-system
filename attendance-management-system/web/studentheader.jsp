@@ -15,7 +15,7 @@
 <%@page import="java.sql.PreparedStatement"%>
 <%@page import="java.sql.Connection"%>
 <%
-    Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/attendance?useSSL=false","root","root");
+    Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/attendance?useSSL=false","root","SYCS");
      //getting current day of week ,date,time
             Calendar calendar = Calendar.getInstance();
             Date date = calendar.getTime();         
@@ -40,7 +40,7 @@
                 <div class="navItem">
                     <ul>
                         <li><a href="StudentDashboard.jsp">Student</a></li>
-                        <li><a href="updateProfile.jsp">Update</a></li>                        
+                        <li><a href="UpdateStudentProfile.jsp">Update</a></li>                        
                         <li><a href="deleteprofile.jsp">Delete profile</a></li>
                         <li><a href="#">Logout</a></li>
                     </ul>
