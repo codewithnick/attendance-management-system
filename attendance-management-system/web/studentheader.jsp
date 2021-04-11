@@ -40,7 +40,7 @@
                 <div class="navItem">
                     <ul>
                         <li><a href="StudentDashboard.jsp">Student</a></li>
-                        <li><a href="updateProfile.jsp">Update</a></li>                        
+                        <li><a href="UpdateStudentProfile.jsp">Update</a></li>                        
                         <li><a href="deleteprofile.jsp">Delete profile</a></li>
                         <li><a href="#">Logout</a></li>
                     </ul>
