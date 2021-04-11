@@ -120,6 +120,7 @@
                         {attended=total.getInt(1);}
                     float percent=(attended/tot)*100;
             %>
+            <div><%=attended%></div>
             <tr>
              <!--   <td><%=Subjectid%></td>-->
                 <td><%=subject%></td>
