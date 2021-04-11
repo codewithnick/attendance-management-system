@@ -7,6 +7,10 @@
 <%@page import="java.sql.Connection"%>
 <%
     Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/attendance?useSSL=false","root","");
+   // boolean login=((Boolean) session.getAttribute("isTeacherLogin")).booleanValue();
+   //  if(!(login)){
+  //     response.sendRedirect("teacher.html");
+  //   }
 %>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -28,7 +32,7 @@
                         <li><a href="Addsubject.jsp">Add subject</a></li>
                         <li><a href="updateprofile.jsp">Update Profile</a></li>
                         <li><a href="deleteprofile.jsp">Delete profile</a></li>
-                        <li><a href="#">Logout</a></li>
+                        <li><a href="logout.jsp">Logout</a></li>
                     </ul>
                 </div>
             </div>
