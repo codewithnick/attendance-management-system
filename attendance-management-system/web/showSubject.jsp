@@ -42,8 +42,8 @@
             <td><%=DOW%></td>
             <td><%=Sem%></td>
             <td><a href="update.jsp?q=delete&sid=<%=sid%>">Delete</a></td>
-            <td><a href="update.jsp?sid=<%=sid%>">Edit</a></td>
-            <td><a href="update.jsp?sid=<%=sid%>&Subject=<%=Subject%>&DOW=<%=DOW%>&Sem=<%=Sem%>">View</a></td>
+            <td><a href="EditSubject.html?sid=<%=sid%>">Edit</a></td>
+            <td><a href="view.jsp?search=subject&txt_search=<%=Subject%>">View</a></td>
         </tr>
         <% } %> 
     </table>
