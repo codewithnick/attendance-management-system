@@ -1,0 +1,6 @@
+/attendance-management-system/build/
+/attendance-management-system/dist/
+/attendance-management-system/nbproject/private/
+/attendance-management-system/web/META-INF/
+/attendance-management-system/web/WEB-INF/
+/.vs/
