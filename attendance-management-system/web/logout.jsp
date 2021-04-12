@@ -16,6 +16,23 @@
         
             session.setAttribute("isTeacherLogin", false);
             response.sendRedirect("teacher.html");
+            Cookie cookie = null;
+            Cookie[] cookies = null;
+            if( cookies != null ) {
+           
+            for (int i = 0; i < cookies.length; i++) {
+               cookie = cookies[i];
+               if((cookie.getName( )).compareTo("loggedin") == 0 ) {
+                  cookie.setMaxAge(0);
+                  response.addCookie(cookie);
+                  out.print("Deleted cookie: " +
+                  cookie.getName( ) + "<br/>");
+               }
+               out.print("Name : " + cookie.getName( ) + ", ");
+               out.print("Value: " + cookie.getValue( )+" <br/>");
+            }
+         }
+
         %>
     </body>
 </html>

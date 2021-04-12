@@ -46,7 +46,6 @@
             String name="";
             String contact="";
             String email="";
-            String Dept="";
             String password="";
             while(r.next()){
                 name=r.getString("TName");
