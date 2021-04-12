@@ -3,6 +3,10 @@
     Created on : Mar 27, 2021, 8:21:25 PM
     Author     : PRAJAPATI GAURAV
 --%>
+<%@page import="java.sql.PreparedStatement"%>
+<%@page import="java.sql.DriverManager"%>
+<%@page import="java.sql.Connection"%>
+<%@page import="java.sql.ResultSet"%>
 <%@page import="java.sql.DriverManager"%>
 <%@page import="java.sql.Connection"%>
 <%
@@ -21,11 +25,12 @@
     <body>
         <div class="header">
             <div class="navbar">
-                <a class="logo" href="index.jsp">Online Attendance</a>
+                <a class="logo" href="#">L</a>
                 <div class="navItem">
                     <ul>
                         <li><a href="showSubject.jsp">Show subject</a></li>
                         <li><a href="Addsubject.jsp">Add subject</a></li>
+                        <li><a href="view.html">Search</a></li>
                         <li><a href="updateprofile.jsp">Update Profile</a></li>
                         <li><a href="deleteprofile.jsp">Delete profile</a></li>
                         <li><a href="#">Logout</a></li>

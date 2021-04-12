@@ -19,7 +19,7 @@
         <%
         Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/attendance?useSSL=false","root","root");
         Statement stmt=conn.createStatement();
-        String query1="select Subject,Sem from subject where SubId=401;";
+        String query1="select Subject,Sem from subject where SubId=1;";
         ResultSet rs1 = stmt.executeQuery(query1);
         String x="";
         int y=0;

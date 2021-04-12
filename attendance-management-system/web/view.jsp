@@ -4,13 +4,9 @@
     Author     : Sophia Dcruz
 --%>
 
-<%@page import="java.sql.PreparedStatement"%>
-<%@page import="java.sql.DriverManager"%>
-<%@page import="java.sql.Connection"%>
-<%@page import="java.sql.Connection"%>
-<%@page import="java.sql.ResultSet"%>
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
 
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@include file="header.jsp" %>
 <!DOCTYPE html>
 <html>
     <head>
@@ -31,26 +27,26 @@
        <% 
           String txt=request.getParameter("txt_search");
           String dropdown=request.getParameter("search");
-            Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/attendance?useSSL=false","root","Spd@2001");
+
             PreparedStatement ps;
             ResultSet rs;
             if(dropdown.equals("name")){
-            ps = con.prepareStatement("Select * from Attendance where SId =(Select SId from Student where SName= ?) Order by Attendance desc");
+            ps = conn.prepareStatement("Select * from Attendance where SId =(Select SId from Student where SName= ?) Order by Attendance desc");
             ps.setString(1,txt);
             rs=ps.executeQuery();
      }
             else if(dropdown.equals("rollno")){
-            ps = con.prepareStatement("Select * from Attendance where SId =(Select SId from Student where RollNo= ?) Order by Attendance desc");
+            ps = conn.prepareStatement("Select * from Attendance where SId =(Select SId from Student where RollNo= ?) Order by Attendance desc");
             ps.setString(1,txt);
             rs=ps.executeQuery();
      }
             else if(dropdown.equals("subject")){
-            ps = con.prepareStatement("Select * from Attendance where SubId =(Select SubId from Subject where Subject= ?) Order by Attendance desc");
+            ps = conn.prepareStatement("Select * from Attendance where SubId =(Select SubId from Subject where Subject= ?) Order by Attendance desc");
             ps.setString(1,txt);
             rs=ps.executeQuery();
      }
             else{
-            ps = con.prepareStatement("Select * from Attendance where Date =? Order by Attendance desc");
+            ps = conn.prepareStatement("Select * from Attendance where Date =? Order by Attendance desc");
             ps.setString(1,txt);
             rs=ps.executeQuery();
             }
