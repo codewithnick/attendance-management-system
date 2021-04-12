@@ -9,17 +9,22 @@
 <%
  String message="";
 if(request.getParameter("Id")!=null){
+    int TId=Integer.parseInt(request.getParameter("Id"));
+     String sql2="delete from attendance where SId in(select SubId from subject where TId=?)";
+     PreparedStatement p2=conn.prepareStatement(sql2);
+    p2.setInt(1,TId);
+    int r2=p2.executeUpdate();
     String sql1="delete from subject where TId=?";
     PreparedStatement p=conn.prepareStatement(sql1);
-    p.setInt(1,201);
+    p.setInt(1,TId);
     int r1=p.executeUpdate();
     String sql="delete from  teacher where TId=?";
     PreparedStatement ps=conn.prepareStatement(sql);
-    ps.setInt(1,201);
+    ps.setInt(1,TId);
     int r=ps.executeUpdate();
     if(r>0)
     {
-        response.sendRedirect("showSubject.jsp");
+        response.sendRedirect("teacher.html");
     }
     else{
           message="profile delete successfully";
