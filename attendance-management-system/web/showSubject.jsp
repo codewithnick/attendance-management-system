@@ -21,7 +21,8 @@
         </tr>
         <% 
             PreparedStatement ps=conn.prepareStatement("Select * from subject where TId=?");
-            ps.setInt(1,201);
+            int TId=(Integer)session.getAttribute("TId");
+            ps.setInt(1,TId);
             ResultSet r=ps.executeQuery();
             int sid;
             String Subject="";

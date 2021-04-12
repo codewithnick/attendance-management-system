@@ -12,6 +12,7 @@
         String Sub=request.getParameter("Subject");
         String DOW=request.getParameter("RDay");
         int Sem=Integer.parseInt(request.getParameter("Rsemester"));
+        int TId=(Integer)session.getAttribute("TId");
        // Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/attendance?useSSL=false","root","");
         String sql="insert into subject( SubId,Subject,DayOfWeek,TId,Sem) values(?,?,?,?,?)";
             PreparedStatement ps=conn.prepareStatement(sql);
@@ -27,7 +28,7 @@
             ps.setInt(1,Newid);
             ps.setString(2,Sub);
             ps.setString(3,DOW);
-            ps.setInt(4,201);
+            ps.setInt(4,TId);
             ps.setInt(5,Sem);
             int r=ps.executeUpdate();
             if(r>0)
