@@ -4,15 +4,7 @@
     Author     : Dispersion
 --%>
 
-<%@page import="java.sql.ResultSet"%>
-<%@page import="java.sql.PreparedStatement"%>
-<%@page import="java.sql.Time"%>
-<%@page import="java.util.Date"%>
-<%@page import="java.util.Calendar"%>
-<%@page import="java.util.Calendar"%>
-<%@page import="java.sql.DriverManager"%>
-<%@page import="java.sql.Connection"%>
-<%@page import="java.sql.Connection"%>
+<%@ include file="studentheader.jsp" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -25,11 +17,6 @@
 
                 int sid=Integer.parseInt(request.getParameter("SId"));
                 int subjectid=Integer.parseInt(request.getParameter("SubId"));
-
-
-                
-                
-                
                 String sname="";
                 String rollno="";
                 int sem=0;
@@ -39,17 +26,6 @@
                 String day="";
                 int a_id=0;
                 boolean bool=false;
-
-                Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/Attendance?useSSL=false","root","root");
-                Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/Attendance?useSSL=false","root","SYCS");
-
-                
-                Calendar calendar = Calendar.getInstance();
-                Date date = calendar.getTime();      
-                long now = System.currentTimeMillis();
-                Time sqlTime = new Time(now);  
-                java.sql.Date sqlDate = new java.sql.Date(date.getTime());
-                
                 PreparedStatement s=conn.prepareStatement("Select * from Student where SId=?");
                 s.setInt(1,sid);
                 ResultSet stu=s.executeQuery();
@@ -91,9 +67,6 @@
                  p.setInt(3,a_id);
                  int mark=p.executeUpdate();              
                 %>
-
-                <div><%=sid%><%=subjectid%></div>
-
              <table border="1">       
             <tr>
                 <th>NAME</th>
