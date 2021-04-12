@@ -28,7 +28,7 @@
                         <li><a href="Addsubject.jsp">Add subject</a></li>
                         <li><a href="updateprofile.jsp">Update Profile</a></li>
                         <li><a href="deleteprofile.jsp">Delete profile</a></li>
-                        <li><a href="#">Logout</a></li>
+                        <li><a href="logout.jsp">Logout</a></li>
                     </ul>
                 </div>
             </div>
