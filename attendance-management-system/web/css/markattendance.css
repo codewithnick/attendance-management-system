@@ -1,0 +1,47 @@
+
+#Main {
+  margin-left: auto;
+  margin-right: auto; 
+  font-family: Helvetica;
+  border-collapse: collapse;
+  width: 80%;
+}
+
+h1{
+  text-align: center;
+  background-color: #000000;
+  color: white; 
+}
+
+#Main td {
+  border: 1px solid rgb(163, 163, 163);
+  padding: 30px;
+  width: 45%;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  text-align: rigth;
+  font-size:larger;
+  background-color: rgb(255, 255, 255);
+  
+}
+#Main th {
+  background-color: #E07C24;
+  color: #000000;
+  border: 1px solid rgb(163, 163, 163);
+  padding: 30px;
+  width: 35%;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  text-align: center;
+  font-size:larger;
+}
+
+button{
+  background-color:#E07C24 ;
+  padding: 10px 25px;
+  border: none;
+  color:#000000 ;
+  outline-color: #C0C0C0;
+  font-weight: bolder;
+  font-size: large;
+}

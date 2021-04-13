@@ -10,6 +10,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+ 		<link href="markattendance.css" rel="stylesheet" type="text/css">
         <title>Mark Attendance</title>
     </head>
     <body>
@@ -67,30 +68,22 @@
                  p.setInt(3,a_id);
                  int mark=p.executeUpdate();              
                 %>
-             <table border="1">       
+            
+            <h3>Congrats, Attendance is marked For</h3>
+            <table id="Main"  >       
+            <tr><th>NAME</th> <td><%=sname%></td></tr>
+            <tr></tr> <th>ROLLNO</th> <td><%=rollno%></td></tr>
+            <tr><th>SEMESTER</th><td><%=sem%></td></tr>
+            <tr><th>SUBJECT</th><td><%=subject%></td></tr>
+            <tr><th>DAY</th><td><%=day%></td></tr>
+            <tr><th>TEACHER</th><td><%=tname%></td></tr>
             <tr>
-                <th>NAME</th>
-                <th>ROLLNO</th>
-                <th>SEMESTER</th>
-                <th>SUBJECT</th>
-                <th>DAY</th>
-                <th>TEACHER</th>
-                <th>MARK</th>
-
-            </tr>
-            <tr>
-                <td><%=sname%></td>
-                <td><%=rollno%></td>
-                <td><%=sem%></td>
-                <td><%=subject%></td>
-                <td><%=day%></td>
-                 <td><%=tname%></td>
-                <td>
-                        <a href="StudentDashboard.jsp">Mark</a>                     
+                <th>Return to</th>
+                <td id="link">
+                        <a href="StudentDashboard.jsp"><button>Dashboard</button></a>                     
                 </td>  
-            </tr>         
-        </table>           
-
+            </tr>
+        </table>     
 
     </body>
 </html>
