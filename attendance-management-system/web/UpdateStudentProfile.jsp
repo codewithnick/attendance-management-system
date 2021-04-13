@@ -8,7 +8,7 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%
    String message="";
-   int sid=101;
+   sid=Integer.parseInt(request.getParameter("sid"));
    if(request.getParameter("update")!=null){
        String sname=request.getParameter("SName");
        String sphone=request.getParameter("Sphone");

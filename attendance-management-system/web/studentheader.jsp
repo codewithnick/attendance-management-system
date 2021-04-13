@@ -23,6 +23,8 @@
             long now = System.currentTimeMillis();
             Time sqlTime = new Time(now);  
             java.sql.Date sqlDate = new java.sql.Date(date.getTime());
+            //default will change later
+            int sid = 101;
 %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -36,11 +38,12 @@
     <body>
         <div class="header">
             <div class="navbar">
-                <a class="logo" href="index.jsp">Online Attendance</a>
+                <a class="logo" href="index.jsp">L</a>
                 <div class="navItem">
                     <ul>
                         <li><a href="StudentDashboard.jsp">Student</a></li>
-                        <li><a href="UpdateStudentProfile.jsp">Update</a></li>                        
+                        <li><a href="UpdateStudentProfile.jsp?sid=<%=sid%>">
+                                Update</a></li>                        
                         <li><a href="deleteprofile.jsp">Delete profile</a></li>
                         <li><a href="#">Logout</a></li>
                     </ul>

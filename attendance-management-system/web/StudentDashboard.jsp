@@ -14,13 +14,17 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
     </head>
-
+    
+    <div>Student Name</div>
+    <div>RollNO</div>
+    <div>contact</div>
+    <div>semester</div>
+    
     <div>Today's date: <%= (new java.util.Date()).toLocaleString()%></div>
 
 
     <%
-        //default will change later
-        int sid = 101;
+        
 
         //find sem through sid
         PreparedStatement semps = conn.prepareStatement("Select sem from student where SId=?  ");
