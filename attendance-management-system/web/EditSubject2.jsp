@@ -4,22 +4,36 @@
     Author     : Admin
 --%>
 
+<%@page import="java.sql.PreparedStatement"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="java.sql.ResultSet"%>
 <%@page import="java.sql.Statement"%>
 <%@page import="java.sql.DriverManager"%>
 <%@page import="java.sql.Connection"%>
 <%@page import="java.sql.Connection"%>
+<%@ include file="header.jsp" %>
 <%
-    Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/attendance?useSSL=false","root","root");
-    if(request.getParameter("submit")!=null){
-        Statement stmt=conn.createStatement();
+    //Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/attendance?useSSL=false","root","root");
+    if(request.getParameter("Submit")!=null){
+        
+       // Statement stmt=conn.createStatement();
+        if((request.getParameter("sid")!=null)){
+        int SubId;
+        SubId=Integer.parseInt(request.getParameter("sid"));
         String subje=request.getParameter("upsuj");
         String DOW=request.getParameter("updowe");
         int Sem=Integer.parseInt(request.getParameter("upsem"));
-        String query2="update Subject Set Subject='"+subje+"' , Sem='"+Sem+"' , DayOfWeek='"+DOW+"' where SubId=401 ;";
-        stmt.executeUpdate(query2);
-    }
+        String sql1="update Subject Set Subject=? , Sem=? , DayOfWeek=? where SubId=? ;";
+        PreparedStatement stmt=conn.prepareStatement(sql1);
+        stmt.setString(1,subje);
+        stmt.setInt(2,Sem);
+        stmt.setString(3,DOW);
+        stmt.setInt(4,SubId);
+        //String query2="update Subject Set Subject='"+subje+"' , Sem='"+Sem+"' , DayOfWeek='"+DOW+"' where SubId=401 ;";
+        stmt.executeUpdate();
+        }
+        }
+
 %>
 
 <!DOCTYPE html>
@@ -30,19 +44,27 @@
     </head>
     <body>
         <%
-            Connection conn1 = DriverManager.getConnection("jdbc:mysql://localhost:3306/attendance?useSSL=false","root","root");
-            Statement stmt1=conn1.createStatement();
-            String query1="select Subject,Sem from subject where SubId=401;";
-            ResultSet rs1 = stmt1.executeQuery(query1);
+            //Connection conn1 = DriverManager.getConnection("jdbc:mysql://localhost:3306/attendance?useSSL=false","root","root");
             String x="";
             int y=0;
+            int SubId=0;
+            if((request.getParameter("sid")!=null)){
+            SubId=Integer.parseInt(request.getParameter("sid"));
+            PreparedStatement stmt1=conn.prepareStatement("select Subject,Sem from subject where SubId=?;");
+            stmt1.setInt(1,SubId);
+            /*Statement stmt1=conn1.createStatement();
+            String query1="select Subject,Sem from subject where SubId=401;";*/
+            ResultSet rs1 = stmt1.executeQuery();
+
             if (rs1.next())
             {
                 x = rs1.getString("Subject");
                 y = rs1.getInt("Sem");
             }
-            %>
-        <form action="EditSubject.jsp">
+            }
+        %>
+        <form action="EditSubject2.jsp">
+            <input type="hidden" name="sid" value="<%=SubId%>" />
             <table>
             <tr>
             <td>
@@ -93,8 +115,7 @@
             </td>
             </tr>
             <tr>
-                <td><input type="submit" value="Save"/></td>
-                <td><input type="submit" value="Delete"/></td>
+                <td><input type="submit" value="Save" name="Submit"/></td>
             </tr>
         </table>
         </form>
