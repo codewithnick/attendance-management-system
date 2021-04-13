@@ -8,10 +8,10 @@
 <%@page import="java.sql.PreparedStatement"%>
 <%@ include file="header.jsp" %>
 
-<div class="tables">
+<div class="tables" align="center">
     <table border="1">
         <tr>
-            <th>S.No</th>
+            <th>Sr.No</th>
             <th>Subject</th>
             <th>DayOfWeek</th>
             <th>Sem</th>

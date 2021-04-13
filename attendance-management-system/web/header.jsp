@@ -24,11 +24,11 @@
                 <a class="logo" href="index.jsp">Online Attendance</a>
                 <div class="navItem">
                     <ul>
-                        <li><a href="showSubject.jsp">Show subject</a></li>
-                        <li><a href="Addsubject.jsp">Add subject</a></li>
+                        <li><a href="showSubject.jsp">Show Subject</a></li>
+                        <li><a href="Addsubject.jsp">Add Subject</a></li>
                         <li><a href="updateprofile.jsp">Update Profile</a></li>
-                        <li><a href="deleteprofile.jsp">Delete profile</a></li>
-                        <li><a href="#">Logout</a></li>
+                        <li><a href="deleteprofile.jsp">Delete Profile</a></li>
+                        <li><a href="#">LogOut</a></li>
                     </ul>
                 </div>
             </div>

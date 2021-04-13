@@ -16,11 +16,13 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>View</title>
+        <link rel="stylesheet" href="css/style.css"/>
     </head>
     <body>
         
-                <table border="1">
+        <div class="viewtable">
+                <table align="center" border="1">
                     <tr> <th>Attendance Id</th>
                     <th>Date</th>
                     <th>Time</th>
@@ -44,22 +46,28 @@ else
             Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/attendance?useSSL=false","root","root");
             PreparedStatement ps;
             ResultSet rs;
-            if(dropdown.equals("name")){
+            if(dropdown.equals("name")){%>
+             <h1>Hello <%=txt%>! Your attendance is recorded as below</h1>
+                    <%   
             ps = con.prepareStatement("Select * from Attendance where SId in(Select SId from Student where SName= ?) Order by Attendance desc");            
             ps.setString(1,txt);
             rs=ps.executeQuery(); 
      }
-            else if(dropdown.equals("rollno")){
-            ps = con.prepareStatement("Select * from Attendance where SId in (Select SId from Student where RollNo= ?) Order by Attendance desc");
+            else if(dropdown.equals("rollno")){%>
+            <h1>Attendance for RollNo <%=txt%> is recorded as below</h1>
+            <%ps = con.prepareStatement("Select * from Attendance where SId in (Select SId from Student where RollNo= ?) Order by Attendance desc");
             ps.setString(1,txt);
             rs=ps.executeQuery();
      }
-            else if(dropdown.equals("subject")){
-            ps = con.prepareStatement("Select * from Attendance where SubId in (Select SubId from Subject where Subject= ?) Order by Attendance desc");
+            else if(dropdown.equals("subject")){%>
+           <h1>Your attendance for <%=txt%> is recorded as below</h1>
+            <% ps = con.prepareStatement("Select * from Attendance where SubId in (Select SubId from Subject where Subject= ?) Order by Attendance desc");
             ps.setString(1,txt);
             rs=ps.executeQuery();
      }
-            else{
+            else{%>
+           <h1>Your attendance on <%=txt%> is recorded as below</h1>
+            <%
             ps = con.prepareStatement("Select * from Attendance where Date =? Order by Attendance desc");
             ps.setString(1,txt);
             rs=ps.executeQuery();
@@ -107,5 +115,7 @@ else
     <%
 }   %>
   </table>
+  </div>
+
     </body>
 </html>
