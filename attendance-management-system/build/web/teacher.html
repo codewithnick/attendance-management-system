@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Student</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div>
+        
+            <h2>Login</h2>
+            <form action="teacherLogin.jsp">
+                Email:<input type="text" name="email" placeholder="jonsmith@gmail.com"/>
+                <br>
+                Password:<input type="password" name="password" placeholder="**********"/>
+                <br>
+                <input type="submit" value="Login"/>
+            </form>
+        </div>
+        
+        <div>
+            <form action="teacherRegister.jsp">
+        Name:<input type="text" name="name"/>
+        <br>
+        Email:<input type="email" name="email"/>
+<br>
+        Password:<input type="password" name="password"/>
+<br>
+        Dept:<select name="Dept" id="dept">
+  <option value="CS">CS</option>
+  <option value="BMS">BMS</option>
+  <option value="BAF">BAF</option>
+  <option value="IT">IT</option>
+</select>
+
+      <br>
+
+        
+        
+        Contact:<input type="text" name="contact"/>
+<br>
+        <input type="submit" value="register"/>
+            </form>
+        </div>
+    </body>
+</html>
