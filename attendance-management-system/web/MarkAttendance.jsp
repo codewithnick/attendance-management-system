@@ -10,13 +10,12 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
- 		<link href="markattendance.css" rel="stylesheet" type="text/css">
+        <link href="css/markattendance.css" rel="stylesheet" type="text/css">
         <title>Mark Attendance</title>
     </head>
     <body>
      <%
 
-                int sid=Integer.parseInt(request.getParameter("SId"));
                 int subjectid=Integer.parseInt(request.getParameter("SubId"));
                 String sname="";
                 String rollno="";
@@ -69,7 +68,7 @@
                  int mark=p.executeUpdate();              
                 %>
             
-            <h3>Congrats, Attendance is marked For</h3>
+            <h1>Congrats, Attendance is marked </h1>
             <table id="Main"  >       
             <tr><th>NAME</th> <td><%=sname%></td></tr>
             <tr></tr> <th>ROLLNO</th> <td><%=rollno%></td></tr>

@@ -44,7 +44,7 @@
                         <li><a href="StudentDashboard.jsp">Student</a></li>
                         <li><a href="UpdateStudentProfile.jsp?sid=<%=sid%>">
                                 Update</a></li>                        
-                        <li><a href="deleteprofile.jsp">Delete profile</a></li>
+                        <li><a href="deletestudentprofile.jsp">Delete profile</a></li>
                         <li><a href="#">Logout</a></li>
                     </ul>
                 </div>

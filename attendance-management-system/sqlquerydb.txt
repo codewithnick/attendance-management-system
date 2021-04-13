@@ -1,12 +1,12 @@
 Create database Attendance;
 Use Attendance;
 Create table Student (SId int not null auto_increment, SName varchar(40),Email Varchar(50),Password  varchar(32),RollNo varchar(8), Sem int, SContact varchar(10), Primary Key(SId));
-Create table Attendance (AId int not null auto_increment, Date date, Time time, Attendance boolean Default false,SId int , Primary Key(AId), Foreign Key(SId) references Student (SId));
+Create table Attendance (AId int not null auto_increment, Date date, Time time, Attendance boolean Default false,SId int,SubId int , Primary Key(AId), Foreign Key(SId) references Student (SId));
 Create table Teacher (TId int not null auto_increment, TName varchar(40),Email Varchar(50),Password  varchar(32), SContact varchar(10), Primary Key(TId));
 Create table Subject (SubId int not null auto_increment, Subject varchar(15), DayOfWeek varchar(9),TId int, Sem int, Primary Key(SubId),Foreign Key(TId) references Teacher (TId));
 
 
 Insert into student values(101, 'Nikhil','nick@test.com','nick1234','SYCS40', 3, '9869506262');
 Insert into teacher values(201, 'Smitha','teacher@test.com','teacher1234','8080273742');
-Insert into attendance values(301, '2020-10-30','12:00:00', true, 101);
+Insert into attendance values(301, '2020-10-30','12:00:00', true, 101,401);
 Insert into subject values(401, 'Android Dev', 'Saturday', 201, 3);
