@@ -21,7 +21,7 @@
         </tr>
         <% 
             PreparedStatement ps=conn.prepareStatement("Select * from subject where TId=?");
-            ps.setInt(1,201);
+            ps.setInt(1,202);
             ResultSet r=ps.executeQuery();
             int sid;
             String Subject="";
@@ -34,6 +34,7 @@
                DOW=r.getString("DayOfWeek");
                Sem=r.getInt("Sem");
                Sno=Sno+1;
+               out.print(sid);
         %>
         <tr>
             <td><%=Sno%></td>
@@ -41,7 +42,7 @@
             <td><%=DOW%></td>
             <td><%=Sem%></td>
             <td><a href="update.jsp?q=delete&sid=<%=sid%>">Delete</a></td>
-            <td><a href="update.jsp?sid=<%=sid%>">Edit</a></td>
+            <td><a href="EditSubject2.jsp?sid=<%=sid%>">Edit</a></td>
             <td><a href="update.jsp?sid=<%=sid%>&Subject=<%=Subject%>&DOW=<%=DOW%>&Sem=<%=Sem%>">View</a></td>
         </tr>
         <% } %> 
