@@ -35,7 +35,6 @@
                DOW=r.getString("DayOfWeek");
                Sem=r.getInt("Sem");
                Sno=Sno+1;
-               out.print(sid);
         %>
         <tr>
             <td><%=Sno%></td>

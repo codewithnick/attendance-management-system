@@ -15,15 +15,16 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>login</title>
+        
     </head>
     <body>
                       <%
-        Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/attendance?useSSL=false","root","root");
+                    Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/attendance?useSSL=false","root","root");
                     String password=request.getParameter("password");
                     Statement stmt=conn.createStatement();
                     String query="select * from teacher where email='"+request.getParameter("email")+"' AND password='"+password+"';";
                     ResultSet rs = stmt.executeQuery(query);
-                    String val=request.getParameter("email")+"gg";
+                    String val=request.getParameter("email");
                     
                     if(rs.next()){
                         Cookie cookie = new Cookie("loggedin",val);
@@ -34,12 +35,13 @@
                         session.setAttribute("TId",rs.getInt("TId"));
                         %>
                         
-                        <h1>Logged in  <h1>
+                        <h1>Hello <%=val%>, you have successfully logged in!  <h1>
                                 <%   response.sendRedirect("showSubject.jsp");
                     }
                     else{
 %>
-                        <h1>Login failed<h1>
+                        <img style="position:absolute;right:10%" src="css/teacher login failed.jpg" alt="Image counld not be loaded">
+                        <h1 style="color: #800020;">Sorry, your login has failed as credentials do not match! </h1>
                         <%
                     } 
                     %>

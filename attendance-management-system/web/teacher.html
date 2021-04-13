@@ -4,6 +4,7 @@ To change this license header, choose License Headers in Project Properties.
 To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
+
 <html>
     <head>
         <title>Student</title>
@@ -13,25 +14,34 @@ and open the template in the editor.
     </head>
     <body>
        
-            <h1>Login</h1>
+        <br>
+        <br>
+        <h1 style="background-color: #3d1422; color: white; padding: 5px;display:inline-block ;position:relative ;left: 42%;">Login Here</h1>
             <form action="teacherLogin.jsp">
                 <table border="1" class="teacherdashboard" align="center">
-                    <tr><td>Email</td><td><input type="text" name="email" placeholder="jonsmith@gmail.com"/></td></tr>
-                <tr><td>Password</td><td><input type="password" name="password" placeholder="**********"/></td></tr>
+                    <tr><td >Enter Email</td><td><input type="text" name="email" placeholder="jonsmith@gmail.com"/></td></tr>
+                <tr><td>Enter Password</td><td><input type="password" name="password" placeholder="**********"/></td></tr>
+                <tr><td colspan='2'></td></tr>
+                <tr><td colspan="2" style="text-align: center;"><input type="submit" value="Login" style="width:10em;background:white;color:#3d1422 ;  "  /></td></tr>
                 </table>
-                <p><input type="submit" value="Login" /></p>
+               
                 
             </form>
             
             <br>
+            <br>
+            <h1 style="background-color:#820d38;color: white;padding: 5px;display:inline-block ;position:relative ;left: 42%;">Register Here</h1>
             <form action="teacherRegister.jsp">
-                <table>
-        <tr><td>Name</td><td><input type="text" name="name"/></td></tr>
-       <tr><td> Email</td><td><input type="email" name="email"/></td></tr>
-        <tr><td>Password</td><td><input type="password" name="password"/></td></tr>
-        <tr><td>Contact</td><td><input type="text" name="contact"/></td></tr>
+                <table border="1" align="center" class="teacherRegister">
+        <tr><td>Enter Name</td><td><input  type="text" name="name"/></td></tr>
+       <tr><td> Enter Email</td><td ><input  type="email" name="email"/></td></tr>
+        <tr><td>Enter Password</td><td><input  type="password" name="password"/></td></tr>
+        <tr><td>Enter Contact</td><td><input  type="text" name="contact"/></td></tr>
+        <tr><td colspan='2'></td></tr>
+        <tr><td colspan="2" style="text-align: center;"><input type="submit" value="Register" style="width:10em;background:white;color:#820d38;  "  /></td></tr>
+               
         </table>
-        <p><input type="submit" value="register" /></p>
+        
         
             </form>
        
