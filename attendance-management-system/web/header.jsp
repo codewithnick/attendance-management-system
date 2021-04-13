@@ -19,7 +19,6 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
-        <!--  css file here   -->
         <link rel="stylesheet" href="css/style.css"/>
     </head>
     <body>
@@ -28,12 +27,12 @@
                 <a class="logo" href="#">L</a>
                 <div class="navItem">
                     <ul>
-                        <li><a href="showSubject.jsp">Show subject</a></li>
-                        <li><a href="Addsubject.jsp">Add subject</a></li>
+                        <li><a href="showSubject.jsp">Show Subject</a></li>
+                        <li><a href="Addsubject.jsp">Add Subject</a></li>
                         <li><a href="view.html">Search</a></li>
                         <li><a href="updateprofile.jsp">Update Profile</a></li>
-                        <li><a href="deleteprofile.jsp">Delete profile</a></li>
-                        <li><a href="logout.jsp">Logout</a></li>
+                        <li><a href="deleteprofile.jsp">Delete Profile</a></li>
+                        <li><a href="logout.jsp">LogOut</a></li>
                     </ul>
                 </div>
             </div>

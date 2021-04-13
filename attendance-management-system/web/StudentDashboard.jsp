@@ -6,7 +6,6 @@
 
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-
 <%@ include file="studentheader.jsp" %>
 <!DOCTYPE html>
 <html>
@@ -14,6 +13,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
     </head>
+<<<<<<< HEAD
     
     <div>Student Name</div>
     <div>RollNO</div>
@@ -21,6 +21,11 @@
     <div>semester</div>
     
     <div>Today's date: <%= (new java.util.Date()).toLocaleString()%></div>
+=======
+    <br>
+      <h1 style="background-color: #cade52 ;">Mark your attendance for the day!</h1>
+    <div class="studentheader">Today's Date: <%= (new java.util.Date()).toLocaleString()%></div>
+>>>>>>> 9254ea54fd737e9e1c11c86e37b9803a464b9402
 
 
     <%
@@ -88,20 +93,21 @@
     %>
 
     <br>
-
-    <div>sem<%=sem%></div>
+    <body>
+        
+    <div class="studentheader">Attendance for Semester: <%=sem%></div>
     <br>
-    <div>Today is <%=Dow%></div>
-    <h1>Subject wise attendance</h1>
-    <div class="tables">
+    <div class="studentheader">Today is: <%=Dow%></div>
+    <br>
+    <div class="studenttable" align="center">
         <table border="1">
-            <tr>
+            <tr style="background-color: #cade52; color: black; font-size: 20px;">
                 <!--<th>Id</th>-->
                 <th>Subject</th>
                 <th>DayOfWeek</th>
                 <th>Sem</th>
                 <th>Mark</th>
-                <th>Attended Lectures</th>
+                <th>Lectures Attended</th>
                 <th>Total Lectures</th>
             </tr>
             <%
@@ -124,7 +130,9 @@
                         {attended=total.getInt(1);}
                     float percent=(attended/tot)*100;
             %>
+           <tr>
             <tr>
+
              <!--   <td><%=Subjectid%></td>-->
                 <td><%=subject%></td>
                 <td><%=Dow%></td>
@@ -144,5 +152,5 @@
 
         </table>    
     </div>
-
+</body>
 </html>

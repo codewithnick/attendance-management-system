@@ -35,7 +35,7 @@
         <!--  css file here   -->
         <link rel="stylesheet" href="css/style.css"/>
     </head>
-    <body>
+    <body >
         <div class="header">
             <div class="navbar">
                 <a class="logo" href="index.jsp">L</a>
