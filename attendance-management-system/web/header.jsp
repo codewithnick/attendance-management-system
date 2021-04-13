@@ -24,7 +24,7 @@
     <body>
         <div class="header">
             <div class="navbar">
-                <img src="css/logo.jpg" width="75px" height="50px" style="position:absolute; left:5px;"> <a class="logo" href="#"></a>
+                <img src="css/logo.jpg" width="50px" height="50px" style="position:absolute; left:5px;"> <a class="logo" href="#"></a>
                 <div class="navItem">
                     <ul>
                         <li><a href="showSubject.jsp">Show Subject</a></li>
