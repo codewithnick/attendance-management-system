@@ -16,18 +16,19 @@
     <body>
         
                 <table border="1">
-                    <tr> <th>Attendance Id</th>
+                    <tr> <th>RollNo</th>
+                    <th>Name</th>
                     <th>Date</th>
                     <th>Time</th>
                     <th>Attendance</th>
-                    <th>Student Id</th>
-                    <th>Subject ID</th>
+                    <th>Teacher name</th>
+                    <th>Subject</th>
                     </tr>
             
        <% 
           String txt=request.getParameter("txt_search");
           String dropdown=request.getParameter("search");
-
+          
             PreparedStatement ps;
             ResultSet rs;
             if(dropdown.equals("name")){
@@ -53,18 +54,57 @@
            
        while(rs.next()){
                  String temp;
+                 String name="";
+                 String rollno="";
+                 int SId=rs.getInt("SId");
+                 String Subject="";
+                 int TId=0;
+                //  for name and rollno
+                PreparedStatement ps1 = conn.prepareStatement("Select * from Student where SId=?");
+                ps1.setInt(1,SId);
+                ResultSet rs1=ps1.executeQuery();
+                if(rs1.next()){
+                    name=rs1.getString("SName");
+                    rollno=rs1.getString("RollNo");
+                }
+                // end of for adding name and rollno
+                
+                // for subject name
+                int SubId=rs.getInt("SubId");
+                PreparedStatement ps2 = conn.prepareStatement("Select * from subject where SubId=?");
+                ps2.setInt(1,SubId);
+                ResultSet rs2=ps2.executeQuery();
+                if(rs2.next()){
+                    Subject=rs2.getString("Subject");
+                    TId=rs2.getInt("TId");
+                }
+                // end for subject name
+                
+                // for displaying teacher name
+                String Tname="";
+                PreparedStatement ps3 = conn.prepareStatement("Select * from teacher where TId=?");
+                ps3.setInt(1,TId);
+                ResultSet rs3=ps3.executeQuery();
+                if(rs3.next()){
+                    Tname=rs3.getString("TName");
+                   
+                }
+                //enf for displaying teacher name
                  if(rs.getInt("attendance")==1){
                       temp="Present";
-    }else{
-        temp="Absent";
-        }
-%>
-    <tr><td><%=rs.getInt("AId")%></td>
+                 
+                }else{
+                    temp="Absent";
+                    }
+     
+%>  
+    <tr><td><%=rollno%></td>
+    <td><%=name%></td>
     <td><%=rs.getString("Date")%></td>
     <td><%=rs.getString("Time")%></td>
     <td><%= temp %></td>
-   <td><%=rs.getInt("SId")%></td>
-    <td><%=rs.getInt("SubId")%></td></tr>
+   <td><%=Tname%></td>
+    <td><%=Subject%></td></tr>
     <%
 }   %>
   </table>
