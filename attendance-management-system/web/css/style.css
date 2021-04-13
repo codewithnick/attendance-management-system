@@ -13,8 +13,8 @@ and open the template in the editor.
     color: whitesmoke;
     margin-left: 20px;
     margin-top: 20px;
-    text-decoration: none;
     font-size: 18px;
+    font-weight: bold;
 }
 
 .navItem ul li{
@@ -37,9 +37,45 @@ and open the template in the editor.
     background-color: black;
     color: white;
 }
-
-.tables table{ 
-width: 100%;
+body{
+    background-color: #C0C0C0;
+}
+h1{
+   
+   text-align:center;
+}
+.editpage{
+    width: 85%;
+     background-color: #b76e79;
+}
+.studentheader{
+    font-size: 20px;
+    font-weight: bold;
+    font-family:Futura Condensed Extra Bold;
+    color: #183C28;
+}
+.viewtable table{
+  width: 85%;
 text-align: center;
-color:red;
+background-color: #072f5f;
+font-weight: bold;
+font-size: 20px;  
+color: white;
+    
+}
+.tables table{ 
+width: 85%;
+text-align: center;
+background-color: #E18A07;
+font-weight: bold;
+font-size: 20px;
+}
+.studenttable table{
+   width: 85%;
+text-align: center;
+background-color: #183C28;
+color: white;
+font-weight: bold;
+font-size: 18px; 
+    
 }

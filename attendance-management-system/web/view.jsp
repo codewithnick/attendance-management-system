@@ -31,17 +31,17 @@
             PreparedStatement ps;
             ResultSet rs;
             if(dropdown.equals("name")){
-            ps = conn.prepareStatement("Select * from Attendance where SId =(Select SId from Student where SName= ?) Order by Attendance desc");
+            ps = conn.prepareStatement("Select * from Attendance where SId in (Select SId from Student where SName= ?) Order by Attendance desc");
             ps.setString(1,txt);
             rs=ps.executeQuery();
      }
             else if(dropdown.equals("rollno")){
-            ps = conn.prepareStatement("Select * from Attendance where SId =(Select SId from Student where RollNo= ?) Order by Attendance desc");
+            ps = conn.prepareStatement("Select * from Attendance where SId in(Select SId from Student where RollNo= ?) Order by Attendance desc");
             ps.setString(1,txt);
             rs=ps.executeQuery();
      }
             else if(dropdown.equals("subject")){
-            ps = conn.prepareStatement("Select * from Attendance where SubId =(Select SubId from Subject where Subject= ?) Order by Attendance desc");
+            ps = conn.prepareStatement("Select * from Attendance where SubId in (Select SubId from Subject where Subject= ?) Order by Attendance desc");
             ps.setString(1,txt);
             rs=ps.executeQuery();
      }

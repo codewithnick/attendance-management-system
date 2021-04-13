@@ -33,16 +33,16 @@
         <!--  css file here   -->
         <link rel="stylesheet" href="css/style.css"/>
     </head>
-    <body>
+    <body >
         <div class="header">
             <div class="navbar">
                 <a class="logo" href="index.jsp">Online Attendance</a>
                 <div class="navItem">
                     <ul>
                         <li><a href="StudentDashboard.jsp">Student</a></li>
-                        <li><a href="UpdateStudentProfile.jsp">Update</a></li>                        
-                        <li><a href="deleteprofile.jsp">Delete profile</a></li>
-                        <li><a href="#">Logout</a></li>
+                        <li><a href="UpdateStudentProfile.jsp">Update Profile</a></li>                        
+                        <li><a href="deleteprofile.jsp">Delete Profile</a></li>
+                        <li><a href="#">LogOut</a></li>
                     </ul>
                 </div>
             </div>

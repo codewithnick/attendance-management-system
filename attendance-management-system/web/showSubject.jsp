@@ -8,10 +8,10 @@
 <%@page import="java.sql.PreparedStatement"%>
 <%@ include file="header.jsp" %>
 
-<div class="tables">
+<div class="tables" align="center">
     <table border="1">
         <tr>
-            <th>S.No</th>
+            <th>Sr.No</th>
             <th>Subject</th>
             <th>DayOfWeek</th>
             <th>Sem</th>
@@ -21,7 +21,8 @@
         </tr>
         <% 
             PreparedStatement ps=conn.prepareStatement("Select * from subject where TId=?");
-            ps.setInt(1,202);
+            int TId=(Integer)session.getAttribute("TId");
+            ps.setInt(1,TId); 
             ResultSet r=ps.executeQuery();
             int sid;
             String Subject="";
