@@ -55,8 +55,7 @@
                  String temp;
                  if(rs.getInt("attendance")==1){
                       temp="Present";
-    }
-                 else{
+    }else{
         temp="Absent";
         }
 %>

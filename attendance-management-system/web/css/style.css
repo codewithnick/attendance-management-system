@@ -70,6 +70,13 @@ background-color: #E18A07;
 font-weight: bold;
 font-size: 20px;
 }
+.teacherdashboard{
+    width: 85%;
+text-align: center;
+background-color: #FF7300;
+font-weight: bold;
+font-size: 20px;
+}
 .studenttable table{
    width: 85%;
 text-align: center;

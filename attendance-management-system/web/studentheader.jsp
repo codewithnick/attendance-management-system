@@ -41,12 +41,12 @@
                 <a class="logo" href="index.jsp">L</a>
                 <div class="navItem">
                     <ul>
-                        <li><a href="StudentDashboard.jsp">Student</a></li>
+                        <li><a href="StudentDashboard.jsp">Student Profile</a></li>
                         <li><a href="UpdateStudentProfile.jsp?sid=<%=sid%>">
-                                Update</a></li>                        
-                        <li><a href="deletestudentprofile.jsp">Delete profile</a></li>
-                        <li><a href="#">Logout</a></li>
+                                Update Profile</a></li>                        
+                        <li><a href="deletestudentprofile.jsp">Delete Profile</a></li>
+                        <li><a href="#">LogOut</a></li>
                     </ul>
                 </div>
             </div>
-        </div>
+x        </div>

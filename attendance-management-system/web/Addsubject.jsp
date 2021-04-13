@@ -43,7 +43,7 @@
         
  %>
 
-    <h1>Welcome TeacherName</h1>
+    <h1>Welcome</h1>
     <div class="card">
         <form action="Addsubject.jsp">
             <h2>Add your Subject</h2>
@@ -58,14 +58,14 @@
                 <option value="Saturday">Saturday</option>
                 <option value="Sunday">Sunday</option>
             </select></br></br>
-            SEM:<select name="Rsemester">
+            Semester:<select name="Rsemester">
                 <option>Select Sem</option>
-                <option value="1">Sem 1</option>
-                <option value="2">Sem 2</option>
-                <option value="3">Sem 3</option>
-                <option value="4">Sem 4</option>
-                <option value="5">Sem 5</option>
-                <option value="6">Sem 6</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
             </select></br></br>
             <input type="submit" value="SUBMIT" name="submit"></br></br>
             <% if(!message.equals("")){ %>
