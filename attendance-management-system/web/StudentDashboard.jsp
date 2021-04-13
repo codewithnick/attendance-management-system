@@ -13,19 +13,14 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
     </head>
-<<<<<<< HEAD
-    
     <div>Student Name</div>
     <div>RollNO</div>
     <div>contact</div>
     <div>semester</div>
-    
-    <div>Today's date: <%= (new java.util.Date()).toLocaleString()%></div>
-=======
     <br>
       <h1 style="background-color: #cade52 ;">Mark your attendance for the day!</h1>
     <div class="studentheader">Today's Date: <%= (new java.util.Date()).toLocaleString()%></div>
->>>>>>> 9254ea54fd737e9e1c11c86e37b9803a464b9402
+
 
 
     <%
@@ -93,7 +88,7 @@
     %>
 
     <br>
-    <body>
+
         
     <div class="studentheader">Attendance for Semester: <%=sem%></div>
     <br>
@@ -128,12 +123,11 @@
                     total=pm.executeQuery();
                     if(total.next())
                         {attended=total.getInt(1);}
-                    float percent=(attended/tot)*100;
+                    float percent=0;
+                    if(tot!=0)
+                    percent=(attended/tot)*100;                    
             %>
            <tr>
-            <tr>
-
-             <!--   <td><%=Subjectid%></td>-->
                 <td><%=subject%></td>
                 <td><%=Dow%></td>
                 <td><%=sem%></td>

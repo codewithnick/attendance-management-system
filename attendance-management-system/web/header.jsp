@@ -27,11 +27,12 @@
                 <img src="css/logo.jpg" width="50px" height="50px" style="position:absolute; left:5px;"> <a class="logo" href="#"></a>
                 <div class="navItem">
                     <ul>
-                        <li><a href="showSubject.jsp">Show Subject</a></li>
-                        <li><a href="Addsubject.jsp">Add Subject</a></li>
+                        <li><a href="showSubject.jsp">Show Sub</a></li>
+                        <li><a href="Addsubject.jsp">Add Sub</a></li>
                         <li><a href="view.html">Search</a></li>
-                        <li><a href="updateprofile.jsp">Update Profile</a></li>
-                        <li><a href="deleteprofile.jsp">Delete Profile</a></li>
+                        <li><a href="updateprofile.jsp">UpdatePro</a></li>
+                        <li><a href="deleteprofile.jsp">DeletePro</a></li>
+                        <li><a href="deletestudentprofile.jsp">DeleteStud</a></li>
                         <li><a href="logout.jsp">LogOut</a></li>
                     </ul>
                 </div>
