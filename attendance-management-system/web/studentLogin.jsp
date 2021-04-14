@@ -18,7 +18,7 @@
     </head>
     <body>
                <%
-        Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/attendance?useSSL=false","root","shivam12");
+        Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/attendance?useSSL=false","root","root");
                     String password=request.getParameter("password");
                     Statement stmt=conn.createStatement();
                     String query="select * from student where email='"+request.getParameter("email")+"' AND password='"+password+"';";
@@ -28,10 +28,11 @@
                         Cookie cookie = new Cookie("loggedin",val);
                         cookie.setMaxAge(60*60*24); 
                         response.addCookie(cookie);
+                        session.setAttribute("SId",rs.getInt("SId"));
                         %>
                         
                         <h1>Login successful<h1>
-                                <%
+                                <%    response.sendRedirect("StudentDashboard.jsp");
                     }
                     else{
 %>
