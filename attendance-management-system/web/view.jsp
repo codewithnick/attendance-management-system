@@ -15,6 +15,19 @@
         <link rel="stylesheet" href="css/style.css"/>
     </head>
     <body>
+         <form action="view.jsp">
+            <table>
+                <tr>  <td><input type="text" name="txt_search"> </td>  
+                    <td><input type="submit" value="Search" name="btn_search"> </td> <td>By<td> 
+                    <td><select name="search">
+                <option value="name">Name</option>
+                <option value="rollno">Roll No</option>
+                <option value="subject">Subject</option>
+                <option value="date">Date</option>
+              </select>
+                    </td>
+            </table>
+         </form>
         <div class="viewtable">
             <table border="1" align="center" >
                 <tr> <th>RollNo</th>
@@ -26,7 +39,8 @@
                     <th>Subject</th>
                 </tr>
 
-                <%           String txt = request.getParameter("txt_search");
+                <%  if(request.getParameter("btn_search")!=null){
+                    String txt = request.getParameter("txt_search");
                     String dropdown = request.getParameter("search");
 
                     PreparedStatement ps;
@@ -103,7 +117,7 @@
                     <td><%=Tname%></td>
                     <td><%=Subject%></td></tr>
                     <%
-        }%>
+        }}%>
             </table>
         </div>
     </body>

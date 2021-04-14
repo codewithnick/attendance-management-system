@@ -43,7 +43,7 @@
             <td><%=Sem%></td>
             <td><a href="update.jsp?q=delete&sid=<%=sid%>">Delete</a></td>
             <td><a href="EditSubject2.jsp?sid=<%=sid%>">Edit</a></td>
-            <td><a href="view.jsp?txt_search=<%=Subject%>&search=subject">View</a></td>
+            <td><a href="view.jsp?btn_search=search&txt_search=<%=Subject%>&search=subject">View</a></td>
         </tr>
         <% } %> 
     </table>

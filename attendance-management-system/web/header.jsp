@@ -11,6 +11,8 @@
 <%@page import="java.sql.Connection"%>
 <%
     Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/attendance?useSSL=false","root","root");
+    if(session.getAttribute("TId")==null)
+%><script> location.href="error.html" ;</script><%
 %>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -29,7 +31,7 @@
                     <ul>
                         <li><a href="showSubject.jsp">Show Sub</a></li>
                         <li><a href="Addsubject.jsp">Add Sub</a></li>
-                        <li><a href="view.html">Search</a></li>
+                        <li><a href="view.jsp">Search</a></li>
                         <li><a href="updateprofile.jsp">UpdatePro</a></li>
                         <li><a href="deleteprofile.jsp">DeletePro</a></li>
                         <li><a href="deletestudentprofile.jsp">DeleteStud</a></li>
