@@ -6,8 +6,9 @@
 
 <%@page import="java.sql.PreparedStatement"%>
 <%@ include file="header.jsp" %>
-<%
- String message="";
+<%!
+ String message=""; %>
+ <%
 if(request.getParameter("Id")!=null){
     int TId=Integer.parseInt(request.getParameter("Id"));
      String sql2="delete from attendance where SId in(select SubId from subject where TId=?)";
@@ -48,4 +49,3 @@ if((request.getParameter("sid")!=null)& (request.getParameter("q")!=null)){
     response.sendRedirect("showSubject.jsp");
 }
 %>
-<%@ include file="footer.jsp" %>

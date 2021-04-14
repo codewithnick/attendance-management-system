@@ -14,9 +14,8 @@
        String sphone=request.getParameter("Sphone");
        String rollno=request.getParameter("RollNo");
        String sem=request.getParameter("Sem");
-       
-       //String temail=request.getParameter("Temail");
-       //String tpassword=request.getParameter("TPassword");
+       String temail=request.getParameter("Temail");
+       String tpassword=request.getParameter("Tpassword");
        String sql1="update student set SName=?,RollNo=?,Sem=?,SContact=? where SId=?";
        PreparedStatement p=conn.prepareStatement(sql1);
         p.setString(1,sname);
@@ -36,7 +35,7 @@
 %>
 
 <div class="container">
-    <h2>Update profile</h2>
+    <h1>Update Profile</h1>
     <form action="">
         <% 
             String sql="select * from student where SId=?";
@@ -47,25 +46,26 @@
             String name="";
             String contact="";
             String email="";
-            String Dept="";
             String password="";
             int sem=1;
             String rollno=""; 
             while(r.next()){
                 name=r.getString("SName");
                 contact=r.getString("SContact");
-                //email=r.getString("email");
-                //password=r.getString("Password");
+                email=r.getString("email");
+                password=r.getString("Password");
                 rollno=r.getString("RollNO");
                 sem =r.getInt("Sem");
             }
         %>
-        Name:<input type="text" name="SName" value="<%=name%>"></br></br>
-        Phone:<input type="text" name="Sphone" value="<%=contact%>"></br></br>
-<!--        Email<input type="email" name="Temail" value="<%=email%>"></br></br>-->
-<!--        Password<input type="text" name="TPassword" value="<%=password%>"></br></br>-->
-        RollNO:<input type="text" name="RollNo" value="<%=rollno%>"></br></br>
-        Sem:
+        <table>
+        
+            <tr><td>Name</td><td><input type="text" name="SName" value="<%=name%>"></td></tr>
+            <tr><td>Phone</td><td><input type="text" name="Sphone" value="<%=contact%>"></td></tr>
+            <tr><td>Email</td><td><input type="email" name="Temail" value="<%=email%>"></td></tr>
+            <tr><td>Password</td><td><input type="text" name="TPassword" value="<%=password%>"></td></tr>
+            <tr><td>RollNo</td><td><input type="text" name="RollNo" value="<%=rollno%>"></td></tr>
+            <tr><td>Semester</td><td>
         <select name="Sem">
             <%for (int i = 1; i <=6; i++) {
             %>
@@ -75,11 +75,14 @@
             <%
                 }
             %>
-        </select></br></br>
-        <input type="submit" value="Update" name="update"></br></br>
+        </select></td></tr>
+            <tr><td colspan="2"></td></tr>
+            <tr><td colspan="2"><input type="submit" value="Update" name="update"></td></tr>
         <% if(!message.equals("")){ %>
             <div class="massage"><p><%= message%></p></div>
-          <%  }  %>
+          <%  } 
+%>
+            </table>
     </form>
 </div>
 
