@@ -48,9 +48,10 @@
             String x="";
             int y=0;
             int SubId=0;
+            String Dow="";
             if((request.getParameter("sid")!=null)){
             SubId=Integer.parseInt(request.getParameter("sid"));
-            PreparedStatement stmt1=conn.prepareStatement("select Subject,Sem from subject where SubId=?;");
+            PreparedStatement stmt1=conn.prepareStatement("select Subject,Sem,DayOfWeek from subject where SubId=?;");
             stmt1.setInt(1,SubId);
             /*Statement stmt1=conn1.createStatement();
             String query1="select Subject,Sem from subject where SubId=401;";*/
@@ -60,28 +61,20 @@
             {
                 x = rs1.getString("Subject");
                 y = rs1.getInt("Sem");
+                Dow = rs1.getString("DayOfWeek");
             }
             }
         %>
         <form action="EditSubject2.jsp">
+            <%=Dow%>
             <input type="hidden" name="sid" value="<%=SubId%>" />
-            <table>
-            <tr>
-            <td>
-            Current Semester:<%=y%>
-            </td>
-            </tr>
-            <tr>
-            <td>
-            Current Subject:<%=x%>
-            </td>
-            </tr>
+            <table>           
             <tr>
                 <td>
                     <label>New Subject:</label>
                 </td>
             <td>
-                <input type="text" name="upsuj">
+                <input type="text" value="<%=x%>" name="upsuj">
             </td>
             </tr>
             <tr>
@@ -90,12 +83,12 @@
             </td>
             <td>
                 <select name="updowe">
-                <option value="Monday">Monday</option>
-                <option value="Tuesday">Tuesday</option>
-                <option value="Wednesday">Wednesday</option>
-                <option value="Thrusday">Thrusday</option>
-                <option value="Friday">Friday</option>
-                <option value="Saturday">Saturday</option>
+                <option <%if(Dow.equals("Monday")){%>selected<%}%> value="Monday">Monday</option>
+                <option <%if(Dow.equals("Tuesday")){%>selected<%}%> value="Tuesday">Tuesday</option>
+                <option <%if(Dow.equals("Wednesday")){%>selected<%}%> value="Wednesday">Wednesday</option>
+                <option <%if(Dow.equals("Thursday")){%>selected<%}%> value="Thursday">Thursday</option>
+                <option <%if(Dow.equals("Friday")){%>selected<%}%> value="Friday">Friday</option>
+                <option <%if(Dow.equals("Saturday")){%>selected<%}%> value="Saturday">Saturday</option>
                 </select>
             </td>
             </tr>
@@ -105,12 +98,14 @@
             </td>
             <td>
                 <select name="upsem">
-                <option value="1">I</option>
-                <option value="2">II</option>
-                <option value="3">III</option>
-                <option value="4">IV</option>
-                <option value="5">V</option>
-                <option value="6">VI</option>
+                    <%for (int i = 1; i <= 6; i++) {
+                    %>
+                    <option <%if (i == y) {%>selected<%}%>>
+                        <%=i%>
+                    </option>
+                    <%
+                        }
+                    %>
                 </select>
             </td>
             </tr>
