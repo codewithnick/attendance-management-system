@@ -66,7 +66,6 @@
             }
         %>
         <form action="EditSubject2.jsp">
-            <%=Dow%>
             <input type="hidden" name="sid" value="<%=SubId%>" />
             <table>           
             <tr>
