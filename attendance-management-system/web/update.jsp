@@ -11,7 +11,7 @@
  <%
 if(request.getParameter("Id")!=null){
     int TId=Integer.parseInt(request.getParameter("Id"));
-     String sql2="delete from attendance where SId in(select SubId from subject where TId=?)";
+     String sql2="delete from attendance where SubId in(select SubId from subject where TId=?)";
      PreparedStatement p2=conn.prepareStatement(sql2);
     p2.setInt(1,TId);
     int r2=p2.executeUpdate();
@@ -46,6 +46,10 @@ if((request.getParameter("sid")!=null)& (request.getParameter("q")!=null)){
     PreparedStatement p=conn.prepareStatement(sql1);
     p.setInt(1,SubId);
     int r1=p.executeUpdate();
+    String sql3="delete from attendance where SubId=?";
+    PreparedStatement p3=conn.prepareStatement(sql3);
+    p3.setInt(1,SubId);
+    int r3=p3.executeUpdate();
     response.sendRedirect("showSubject.jsp");
 }
 %>

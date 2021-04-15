@@ -123,7 +123,7 @@
                     <td><%= temp%></td>
                     <td><%=Tname%></td>
                     <td><%=Subject%></td>
-                    <td><a href="deleteattendance.jsp?aid=<%=AId%>"></a></td></tr>
+                    <td><a href="deleteattendance.jsp?aid=<%=AId%>">Delete record</a></td></tr>
                     <%
         }}%>
             </table>
