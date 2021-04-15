@@ -51,8 +51,8 @@
      <h1 style="text-align: center;">Welcome, You can add a new subject here!</h1>
     
         <form action="Addsubject.jsp">
-            <table border="1" align="center" class="addsub">
-                <tr><td> Subject Name</td><td><input style="font-size:16px; font-weight:bold;"type="text" name="Subject"></td></tr>
+            <table align="center" class="addsub">
+                <tr><td> Subject Name</td><td><input type="text" name="Subject"></td></tr>
             <tr><td>Select Day Of Week</td><td><select name="RDay">
                 <option>Select Day</option>
                 <option value="Monday">Monday</option>
@@ -73,7 +73,7 @@
                 <option value="6">6</option>
                     </select></td></tr>
             <tr><td colspan='2'></td></tr>
-        <tr><td colspan="2" style="text-align: center;"><input type="submit" value="SUBMIT" name="submit" style="font-size:16px;font-weight: bold; width:20em;background:white;"></td></tr>
+        <tr><td colspan="2" style="text-align: center;"><input type="submit" value="SUBMIT" name="submit" style="background:white;"></td></tr>
         </table>
             <br>
         <% if(!message.equals("")){ %>

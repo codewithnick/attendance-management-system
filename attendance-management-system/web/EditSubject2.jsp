@@ -65,21 +65,13 @@
             }
             }
         %>
+        <h1 style="text-align: center;">Welcome, You can edit the subject here!</h1>
+        <br>
         <form action="EditSubject2.jsp">
             <input type="hidden" name="sid" value="<%=SubId%>" />
-            <table>           
-            <tr>
-                <td>
-                    <label>New Subject:</label>
-                </td>
-            <td>
-                <input type="text" value="<%=x%>" name="upsuj">
-            </td>
-            </tr>
-            <tr>
-            <td>
-                <label>New Day Of Week:</label>
-            </td>
+            <table align="center" class="editsub">            
+            <tr><td>New Subject</td><td><input type="text" value="<%=x%>" name="upsuj"></td></tr>
+            <tr><td>New Day Of Week</td>
             <td>
                 <select name="updowe">
                 <option <%if(Dow.equals("Monday")){%>selected<%}%> value="Monday">Monday</option>
@@ -109,8 +101,7 @@
             </td>
             </tr>
             <tr>
-                <td><input type="submit" value="Save" name="Submit"/></td>
-            </tr>
+                <td colspan="2" style="text-align: center;"><input type="submit" value="SAVE CHANGES" name="submit" style="font-size:16px;font-weight: bold; width:20em;background:white;"></td></tr>
         </table>
         </form>
     </body>

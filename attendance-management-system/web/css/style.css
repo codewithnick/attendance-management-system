@@ -43,6 +43,24 @@ font-size: 16px;
     width: 85%;
      background-color: #b76e79;
 }
+input [type="text"]{
+    font-size:16px; 
+    font-weight:bold;
+}
+input [type="submit"]{
+    font-size:16px;
+    font-weight: bold; 
+    width:20em;
+}
+.updateteacherprofile{
+width: 30%;
+background-color: #32a852;
+font-weight: bold;
+font-size: 16px;
+border-radius: 25px;
+padding: 20px;
+    
+}
 select{
     width:100%;
  font-weight: bold;
@@ -55,6 +73,26 @@ background-color: #e16389;
 font-weight: bold;
 font-size: 16px;  
  
+}
+.editsub{
+width: 40%;
+background-color: #e16389;
+font-weight: bold;
+font-size: 16px;  
+    
+}
+.updatestudentprofile{
+width: 30%;
+background-color: #a88932;
+font-weight: bold;
+font-size: 16px;
+border-radius: 25px;
+padding: 20px;
+    
+}
+table tr td{
+  font-weight: bold;
+font-size: 16px;   
 }
 .studentheader{
     font-size: 16px;

@@ -11,7 +11,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>Teacher Header</title>
         <link rel="stylesheet" href="css/style.css"/>
     </head>
     <body>
@@ -19,7 +19,7 @@
              <br>
              <br>
             <table align="center">
-                <tr><td ><input style="background-color:#072f5f;color:white ;width:70%;height: 30%;" type="text" name="txt_search"></td>  
+                <tr><td ><input style="background-color:#072f5f;color:white ;width:70%;height: 30%;font-weight: bold; font-size: 16px;" type="text" name="txt_search"></td>  
                     <td width="25%"><select name="search" style="background-color:#072f5f;color:white ; width:100%;height: 30%;">
                 <option value="name">Name</option>
                 <option value="rollno">Roll No</option>
