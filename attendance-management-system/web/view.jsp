@@ -37,6 +37,7 @@
                     <th>Attendance</th>
                     <th>Teacher name</th>
                     <th>Subject</th>
+                    <th>Delete</th>
                 </tr>
 
                 <%  if(request.getParameter("btn_search")!=null){
@@ -67,6 +68,7 @@
                         String temp;
                         String name = "";
                         String rollno = "";
+                        int AId =rs.getInt("AId");
                         int SId = rs.getInt("SId");
                         String Subject = "";
                         int TId = 0;
@@ -115,7 +117,8 @@
                     <td><%=rs.getString("Time")%></td>
                     <td><%= temp%></td>
                     <td><%=Tname%></td>
-                    <td><%=Subject%></td></tr>
+                    <td><%=Subject%></td>
+                    <td><a href="deleteattendance.jsp?aid=<%=AId%>"></a></td></tr>
                     <%
         }}%>
             </table>
