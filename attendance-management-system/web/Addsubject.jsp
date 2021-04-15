@@ -31,10 +31,10 @@
             int r=ps.executeUpdate();
             if(r>0)
             {
-                message="Subject has been added Successfully";
+                message="Subject has been added successfully!";
             }
             else{
-                message="Failed to add Subject";
+                message="Failed to add subject";
             }
         
    }
@@ -48,11 +48,11 @@
  <body>
      <br>
      <br>
-     <h1 style="text-align: center; color:#fe019a">Welcome, You can add new subject here!</h1>
+     <h1 style="text-align: center;">Welcome, You can add a new subject here!</h1>
     
         <form action="Addsubject.jsp">
             <table border="1" align="center" class="addsub">
-                <tr><td> Subject Name</td><td><input type="text" name="Subject"></td></tr>
+                <tr><td> Subject Name</td><td><input style="font-size:16px; font-weight:bold;"type="text" name="Subject"></td></tr>
             <tr><td>Select Day Of Week</td><td><select name="RDay">
                 <option>Select Day</option>
                 <option value="Monday">Monday</option>
@@ -74,9 +74,11 @@
                     </select></td></tr>
             <tr><td colspan='2'></td></tr>
         <tr><td colspan="2" style="text-align: center;"><input type="submit" value="SUBMIT" name="submit" style="font-size:16px;font-weight: bold; width:20em;background:white;"></td></tr>
-            <% if(!message.equals("")){ %>
-            <div class="massage"><p><%= message%></p></div>
-            </table>
+        </table>
+            <br>
+        <% if(!message.equals("")){ %>
+            <div style="padding: 5px;display:inline-block ;position:relative ;left:40%;font-size:16px; font-weight:bold;background-color:black;color:#e16389; height:50px;"><p><%= message%></p></div>
+            
           <%  }  %>
         </form>
  </body>

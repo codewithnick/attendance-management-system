@@ -80,16 +80,21 @@ font-size: 16px;
 }
 .teacherdashboard{
 width: 40%;
-background-color: #3d1422;
+background-color: #820d38;
 font-weight: bold;
 font-size: 16px;
 color: white;
+   border-radius: 25px;
+  padding: 20px;
+
 }
 .teacherRegister{
    width: 40%;
-background-color:  #820d38;
-font-weight: bold;
-font-size: 16px;
+   border-radius: 25px;
+  padding: 20px;
+  background-color:#3d1422 ;
+  font-weight: bold;
+    font-size: 16px;
 color: white;
 
     
@@ -106,19 +111,22 @@ font-size: 16px;
 
 .studentRegister{
      width: 40%;
-background-color: #4a0101;
-font-weight: bold;
-font-size: 16px;
-color: white;
-}
-
-.studentLogin{
-    width: 40%;
 background-color: #a11212;
 font-weight: bold;
 font-size: 16px;
 color: white;
+border-radius: 25px;
+  padding: 20px;
+}
 
+.studentLogin{
+    width: 40%;
+background-color: #4a0101;
+font-weight: bold;
+font-size: 16px;
+color: white;
+border-radius: 25px;
+  padding: 20px;
 }
 .searchbutton{
 background-image: url('css/search.jpg');

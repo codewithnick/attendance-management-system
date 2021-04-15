@@ -22,7 +22,7 @@
 
 %>
 <script language="JavaScript" type="text/javascript">
-    if (confirm("are you sure you want to delete"))
+    if (confirm("Are you sure you want to delete"))
     {
     <%        String Query = "delete from attendance where sid=?";
         PreparedStatement del = conn.prepareStatement(Query);
@@ -32,18 +32,16 @@
         PreparedStatement delete = conn.prepareStatement(Query1);
         delete.setInt(1, sid);
         delete.executeUpdate();
-        //delete student record
-        //delete all attendance pf the student
         message = "Students record has been deleted successfully!";}%>
-     } 
+     
         
 </script>
 <div>
     <form action="">
-        <table aligm="center">
-            <tr> <td style="background-color: #000000;color:white;">SId</td><td><input type="text" name="SId"></td>
+        <table align="center">
+            <tr> <td style="background-color: #000000;color:white;">Enter Students Id</td><td><input style="background-color: #000000;color:white; height:40px;" type="text" name="SId"></td>
         </table>
-            <p align="center"><input style="background-color: #ff0000;color:white; height:40px;" type="submit" value="Delete account" name="Submit"></p>
+            <p align="center"><input style="background-color: #ff0000;color:white; height:40px;" type="submit" value="Delete Profile" name="Submit"></p>
         <% if(!message.equals("")){ %>
         <div class="massage"><p><%=message%></p></div>            
                 <%}%>
