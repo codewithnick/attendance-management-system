@@ -15,8 +15,10 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Student Login</title>
+         <link rel="stylesheet" href="css/style.css"/>
+   
     </head>
-    <body>
+    <body style="background-color: white;">
                <%
         Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/attendance?useSSL=false","root","root");
                     String password=request.getParameter("password");
@@ -35,8 +37,8 @@
                                 <%    response.sendRedirect("StudentDashboard.jsp");
                     }
                     else{
-%>
-                        <h1>Login failed<h1>
+%>  <img style="position:absolute;right:10%" src="css/login failed.jpg" alt="Image counld not be loaded">
+                        <h1 style="color: #335070;">Sorry, your login has failed as credentials do not match! </h1>
                         <%
                     } 
                     %>

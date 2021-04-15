@@ -16,17 +16,22 @@
     </head>
     <body>
          <form action="view.jsp">
-            <table>
-                <tr>  <td><input type="text" name="txt_search"> </td>  
-                    <td><input type="submit" value="Search" name="btn_search"> </td> <td>By<td> 
-                    <td><select name="search">
+             <br>
+             <br>
+            <table align="center">
+                <tr><td ><input style="background-color:#072f5f;color:white ;width:70%;height: 30%;" type="text" name="txt_search"></td>  
+                    <td width="25%"><select name="search" style="background-color:#072f5f;color:white ; width:100%;height: 30%;">
                 <option value="name">Name</option>
                 <option value="rollno">Roll No</option>
                 <option value="subject">Subject</option>
                 <option value="date">Date</option>
               </select>
                     </td>
+                    <td><input style="background-color:#072f5f ;color:white;width:100%;height: 30%;"  type="submit" value="Search" name="btn_search"></td> 
+                
             </table>
+             <br>
+             <br>
          </form>
         <div class="viewtable">
             <table border="1" align="center" >

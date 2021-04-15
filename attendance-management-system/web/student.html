@@ -9,53 +9,37 @@ and open the template in the editor.
         <title>Student</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/style.css"/>
     </head>
     <body>
         <div>
-        
-            <h2>Login</h2>
+            <br>
+            <h1 style="background-color: #a11212; color: white; padding: 5px;display:inline-block ;position:relative ;left: 45%;">Login</h1>
+            <br>
             <form action="studentLogin.jsp">
-                Email:<input type="text" name="email" placeholder="jonsmith@gmail.com"/>
-                <br>
-                Password:<input type="password" name="password" placeholder="**********"/>
-                
-                <br>
-                <input type="submit" value="Login"/>
+                <table border="1" align="center" class="studentLogin">
+               <tr><td> Enter Email</td><td><input type="text" name="email" placeholder="jonsmith@gmail.com"/></td></tr>
+                <tr><td> Enter Password</td><td><input type="password" name="password" placeholder="**********"/></td></tr>
+                <tr><td colspan='2'></td></tr>
+                <tr><td colspan='2' style="text-align: center;"><input type="submit" value="Login" style="font-size: 16px; font-weight: bold; width:20em;background:white;color:#3d1422 ;  "/></td></tr>
+                </table>
             </form>
         </div>
         
         <div>
-            <h2>Register</h2>
-                            <br>
-
+            <br>
+            <h1 style="background-color:#4a0101;color: white;padding: 5px;display:inline-block ;position:relative ;left: 45%;">Register</h1>
+            <br>
             <form action="studentRegister.jsp">
-        Name:<input type="text" name="name"/>
-                        <br>
-
-        Email:<input type="email" name="email"/>
-                <br>
-
-        Password:<input type="password" name="password"/>
-                <br>
-
-        Dept:<select name="dept" id="dept">
-  <option value="CS">CS</option>
-  <option value="BMS">BMS</option>
-  <option value="BAF">BAF</option>
-  <option value="IT">IT</option>
-</select>
-                <br>
-
-        Rollno:<input type="text" name="dollno"/>
-                <br>
-
-        Sem:<input type="text" name="sem"/>
-                        <br>
-
-        Contact:<input type="text" name="contact"/>
-                <br>
-                <input type="submit" value="Register"/>
-
+              <table border="1" align="center" class="studentRegister">
+        <tr><td>Enter Name</td><td><input type="text" name="name"/></td></tr>
+        <tr><td>Enter Email</td><td><input type="email" name="email"/></td></tr>
+        <tr><td>Enter Password</td><td><input type="password" name="password"/></td></tr>
+        <tr><td>Enter RollNo</td><td><input type="text" name="dollno"/></td></tr>
+        <tr><td>Enter Semester</td><td><input type="text" name="sem"/></td></tr>
+        <tr><td>Enter Contact</td><td><input type="text" name="contact"/></td></tr>
+        <tr><td colspan="2" style="text-align: center;"><input type="submit" value="Register" style="font-size: 16px; font-weight: bold; width:20em;background:white;color:#3d1422;"/></td></tr>
+              </table>
             </form>
         </div>
     </body>
