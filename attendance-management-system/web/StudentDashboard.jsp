@@ -28,13 +28,9 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
     </head>
-    <div>Student Name :<%=Studentname%></div>
-    <div>RollNO :<%=Studentrollno%></div>
-    <div>contact :<%=Studentph%></div>
-    <div>semester :<%=Studentsem%></div>
-    <br>
-      <h1 style="background-color: #cade52 ;">Mark your attendance for the day!</h1>
-    <div class="studentheader">Today's Date: <%= (new java.util.Date()).toLocaleString()%></div>
+      <h1 style="background-color: #cade52 ; text-align:center;">Mark your attendance for the day!</h1>
+    
+    <p class="studentheader" align="center">Student Name: <%=Studentname%> &emsp;&emsp;&emsp; Roll No: <%=Studentrollno%> &emsp;&emsp;&emsp; Contact Number: <%=Studentph%>&emsp;&emsp;&emsp;Semester: <%=Studentsem%> &emsp;&emsp;&emsp; Today's Date: <%= (new java.util.Date()).toLocaleString()%> &emsp;&emsp;&emsp; Today is: <%=Dow%></p>
 
 
 
@@ -105,10 +101,8 @@
     <br>
 
         
-    <div class="studentheader">Attendance for Semester: <%=sem%></div>
-    <br>
-    <div class="studentheader">Today is: <%=Dow%></div>
-    <br>
+   
+ 
     <div class="studenttable" align="center">
         <table border="1">
             <tr style="background-color: #cade52; color: black; font-size: 20px;">

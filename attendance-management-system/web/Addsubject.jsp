@@ -51,7 +51,7 @@
      <h1 style="text-align: center;">Welcome, You can add a new subject here!</h1>
     
         <form action="Addsubject.jsp">
-            <table border="1" align="center" class="addsub">
+            <table align="center" class="addsub">
                 <tr><td> Subject Name</td><td><input style="font-size:16px; font-weight:bold;"type="text" name="Subject"></td></tr>
             <tr><td>Select Day Of Week</td><td><select name="RDay">
                 <option>Select Day</option>
