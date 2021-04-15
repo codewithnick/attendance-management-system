@@ -40,7 +40,7 @@
                     }
                     else{
 %>
-                        <img style="position:absolute;right:10%" src="css/teacher login failed.jpg" alt="Image counld not be loaded">
+                        <img style="position:absolute;right:10%" src="css/login failed.jpg" alt="Image counld not be loaded">
                         <h1 style="color: #800020;">Sorry, your login has failed as credentials do not match! </h1>
                         <%
                     } 

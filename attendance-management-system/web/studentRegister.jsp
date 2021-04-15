@@ -18,8 +18,8 @@
     <body>
         <%
         Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/attendance?useSSL=false","root","root");
-        PreparedStatement stmt=conn.prepareStatement("Insert into Student (Sname,email,password ,RollNo,Sem,Scontact) values(?,?,?,?,?,?)");
-        String phoneno= request.getParameter("contact");
+        PreparedStatement stmt=conn.prepareStatement("Insert into Student (Sname,email,password ,RollNo,Sem,scontact) values(?,?,?,?,?,?)");
+        String phoneno=request.getParameter("contact");
         String email=request.getParameter("email");
         String name=request.getParameter("name");
         stmt.setString(1, name);

@@ -19,9 +19,10 @@
             <th>Edit</th>
             <th>View</th>
         </tr>
-        <% 
-            PreparedStatement ps=conn.prepareStatement("Select * from subject where TId=?");
-            int TId=(Integer)session.getAttribute("TId");
+        <%
+            PreparedStatement ps= conn.prepareStatement("Select * from subject where TId=?");
+            
+            int TId=(Integer)session.getAttribute("TId"); 
             ps.setInt(1,TId); 
             ResultSet r=ps.executeQuery();
             int sid;
@@ -48,6 +49,5 @@
         <% } %> 
     </table>
 </div>
-<%@ include file="footer.jsp" %>
 
 
