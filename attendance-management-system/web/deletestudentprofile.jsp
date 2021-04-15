@@ -13,7 +13,7 @@
 <%@include file="header.jsp"%> 
 
 <!DOCTYPE html>
-<%String message="";%>
+<%! String message="";%>
 <%    
     if (request.getParameter("Submit") != null)
         {
@@ -34,14 +34,16 @@
         delete.executeUpdate();
         //delete student record
         //delete all attendance pf the student
-        message = "Deleted Student record ";}%>
+        message = "Students record has been deleted successfully!";}%>
      } 
         
 </script>
 <div>
     <form action="">
-        </br>  SId:<input type="text" name="SId"></br></br>
-        <input type="submit" value="Delete account" name="Submit"></br></br>
+        <table aligm="center">
+            <tr> <td style="background-color: #000000;color:white;">SId</td><td><input type="text" name="SId"></td>
+        </table>
+            <p align="center"><input style="background-color: #ff0000;color:white; height:40px;" type="submit" value="Delete account" name="Submit"></p>
         <% if(!message.equals("")){ %>
         <div class="massage"><p><%=message%></p></div>            
                 <%}%>

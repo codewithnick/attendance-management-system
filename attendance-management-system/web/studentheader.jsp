@@ -47,24 +47,9 @@
                 <img src="css/logo.jpg" width="50px" height="50px" style="position: absolute;top:10px;left:15px"> <a class="logo" href="index.jsp"></a>
                 <div class="navItem">
                     <ul>
-<<<<<<< HEAD
-<<<<<<< HEAD
                         <li><a href="StudentDashboard.jsp"><img style="position:absolute;top:10px;width:50px; height:50px;right: 350px; " src="css/profile.jpg" > </a></li>
-                        <li><a href="UpdateStudentProfile.jsp?sid=<%=sid%>"><img style="position:absolute;top:10px;width:50px; height:50px;right: 200px;" src="css/update logo.jpg" ></a></li>                        
-                        <li><a href="#"><img style="position:absolute;top:10px;width:50px; height:50px;right: 50px;" src="css/logout.jpg"  </a></li>
-=======
-                        <li><a href="StudentDashboard.jsp">Student Profile</a></li>
-                        <li><a href="UpdateStudentProfile.jsp?sid=<%=sid%>">
-                                Update Profile</a></li>                        
-                        <li><a href="studentLogout.jsp">LogOut</a></li>
->>>>>>> upstream/main
-=======
-
-                        <li><a href="StudentDashboard.jsp"><img style="position:absolute;top:10px;width:50px; height:50px;right: 350px; " src="css/profile.jpg" > </a></li>
-                        <li><a href="UpdateStudentProfile.jsp?sid=<%=sid%>"><img style="position:absolute;top:10px;width:50px; height:50px;right: 200px;" src="css/update logo.jpg" ></a></li>                        
+                        <li><a href="UpdateStudentProfile.jsp?sid=<%=sid%>"><img style="position:absolute;top:10px;width:50px; height:50px;right: 200px;" src="css/update logo.jpg" ></a></li>                                              
                         <li><a href="studentLogout.jsp"><img style="position:absolute;top:10px;width:50px; height:50px;right: 50px;" src="css/logout.jpg"  </a></li>
-
->>>>>>> upstream/main
                     </ul>
                 </div>
             </div>
