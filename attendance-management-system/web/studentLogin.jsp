@@ -30,10 +30,11 @@
                         Cookie cookie = new Cookie("loggedin",val);
                         cookie.setMaxAge(60*60*24); 
                         response.addCookie(cookie);
+                        session.setAttribute("SId",rs.getInt("SId"));
                         %>
                         
                         <h1>Login successful<h1>
-                                <%
+                                <%    response.sendRedirect("StudentDashboard.jsp");
                     }
                     else{
 %>  <img style="position:absolute;right:10%" src="css/login failed.jpg" alt="Image counld not be loaded">

@@ -24,7 +24,13 @@
             Time sqlTime = new Time(now);  
             java.sql.Date sqlDate = new java.sql.Date(date.getTime());
             //default will change later
-            int sid = 101;
+           // int sid = 101;
+            int sid;
+            sid=(Integer)session.getAttribute("SId");
+            
+            if(session.getAttribute("SId")==null){
+%><script> location.href="error.html" ;</script><%
+    }
 %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -41,9 +47,11 @@
                 <img src="css/logo.jpg" width="50px" height="50px" style="position: absolute;top:10px;left:15px"> <a class="logo" href="index.jsp"></a>
                 <div class="navItem">
                     <ul>
+
                         <li><a href="StudentDashboard.jsp"><img style="position:absolute;top:10px;width:50px; height:50px;right: 350px; " src="css/profile.jpg" > </a></li>
                         <li><a href="UpdateStudentProfile.jsp?sid=<%=sid%>"><img style="position:absolute;top:10px;width:50px; height:50px;right: 200px;" src="css/update logo.jpg" ></a></li>                        
                         <li><a href="#"><img style="position:absolute;top:10px;width:50px; height:50px;right: 50px;" src="css/logout.jpg"  </a></li>
+
                     </ul>
                 </div>
             </div>
