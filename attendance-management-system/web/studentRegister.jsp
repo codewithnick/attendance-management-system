@@ -26,8 +26,7 @@
         stmt.setString(2,email);
         stmt.setString(3,request.getParameter("password"));
         stmt.setString(4, request.getParameter("rollno"));
-        stmt.setString(5, request.getParameter("Sem"));
-
+        stmt.setInt(5, Integer.parseInt(request.getParameter("Sem")));
         stmt.setString(6,phoneno);
         int st =stmt.executeUpdate();
                 if(st>=1){
