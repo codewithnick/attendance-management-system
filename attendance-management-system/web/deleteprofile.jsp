@@ -33,7 +33,7 @@
     </script>
    <% }
     else {
-      message="Sorry, Account cannot be deleted as students contact does not match with the registered number!";    
+      message="Sorry, Account cannot be deleted as teachers contact does not match with the registered number!";    
     }
 }
 %>
@@ -41,11 +41,11 @@
     <form action="">
         <table align="center" style="height:40px">
             
-            <tr><td style="background-color: #000000;color:white;">Enter Students Contact Number</td><td width="70px" ><input style="background-color: #000000;color:white; height:40px;"  type="text" name="SContact"><td></tr>
+            <tr><td style="background-color: #000000;color:white;">Enter Teachers Contact Number</td><td width="70px" ><input style="background-color: #000000;color:white; height:40px;"  type="text" name="SContact"><td></tr>
         </table>
-        <p align="center"><input style="background-color: #ff0000;color:white; height:40px;"  type="submit" value="Delete Student Profile" name="TAccount"></p>
+        <p align="center"><input style="background-color: #ff0000;color:white; height:40px;"  type="submit" value="Delete Profile" name="TAccount"></p>
         <% if(!message.equals("")){ %>
-            <div ><p style="padding: 5px;display:inline-block ;position:relative ;left:25%;font-size:16px; font-weight:bold;background-color: #ff0000; height:40px;" ><%= message%></p></div>
+            <div ><p style="padding: 5px;display:inline-block ;position:relative ;left:25%;font-size:16px; font-weight:bold;background-color: #ff0000;color: white; height:40px;" ><%= message%></p></div>
             
           <%  }  %>
     </form>
