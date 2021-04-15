@@ -7,16 +7,31 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ include file="studentheader.jsp" %>
+<%
+        PreparedStatement studentvars=conn.prepareStatement("select * from student where sid=?");
+    studentvars.setInt(1,sid);
+    ResultSet studentresult=studentvars.executeQuery();
+    String Studentname="";
+    String Studentrollno="";
+    String Studentph="";
+    int Studentsem=0;
+    if(studentresult.next()){
+        Studentname=studentresult.getString("Sname");
+        Studentrollno=studentresult.getString("RollNo");
+        Studentph=studentresult.getString("Scontact");
+        Studentsem=studentresult.getInt("Sem");
+    }
+%>
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
     </head>
-    <div>Student Name</div>
-    <div>RollNO</div>
-    <div>contact</div>
-    <div>semester</div>
+    <div>Student Name :<%=Studentname%></div>
+    <div>RollNO :<%=Studentrollno%></div>
+    <div>contact :<%=Studentph%></div>
+    <div>semester :<%=Studentsem%></div>
     <br>
       <h1 style="background-color: #cade52 ;">Mark your attendance for the day!</h1>
     <div class="studentheader">Today's Date: <%= (new java.util.Date()).toLocaleString()%></div>
