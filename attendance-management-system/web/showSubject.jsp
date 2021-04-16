@@ -7,7 +7,7 @@
 <%@page import="java.sql.ResultSet"%>
 <%@page import="java.sql.PreparedStatement"%>
 <%@ include file="header.jsp" %>
-
+<title>Show Subject</title>
 <div class="tables" align="center">
     <table border="1">
         <tr>
