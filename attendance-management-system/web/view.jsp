@@ -48,27 +48,31 @@
                 <%  if(request.getParameter("btn_search")!=null){
                     String txt = request.getParameter("txt_search");
                     String dropdown = request.getParameter("search");
-
+                     int TId=(Integer)session.getAttribute("TId");
                     PreparedStatement ps;
                     ResultSet rs;
                     if (dropdown.equals("name")) {
-                        ps = conn.prepareStatement("Select * from Attendance where SId in (Select SId from Student where SName= ?) Order by Attendance desc");
-                        ps.setString(1, txt);
+                        ps = conn.prepareStatement("Select * from Attendance where SubId in (select SubID from subject where TId=?) and SId in (Select SId from Student where SName= ?) Order by Attendance desc");
+                        ps.setString(2, txt);
+                        ps.setInt(1, TId);
                         rs = ps.executeQuery();
                     } else if (dropdown.equals("rollno")) {
-                        ps = conn.prepareStatement("Select * from Attendance where SId in(Select SId from Student where RollNo= ?) Order by Attendance desc");
-                        ps.setString(1, txt);
+                        ps = conn.prepareStatement("Select * from Attendance where SubId in (select SubID from subject where TId=?) and SId in(Select SId from Student where RollNo= ?) Order by Attendance desc");
+                        ps.setInt(1, TId);
+                        ps.setString(2, txt);
                         rs = ps.executeQuery();
                     } else if (dropdown.equals("subject")) {
-                        ps = conn.prepareStatement("Select * from Attendance where SubId in (Select SubId from Subject where Subject= ?) Order by Attendance desc");
-                        ps.setString(1, txt);
+                        ps = conn.prepareStatement("Select * from Attendance where SubId in (Select SubId from Subject where TId=? and Subject= ?) Order by Attendance desc");
+                        ps.setInt(1, TId);
+                        ps.setString(2, txt);
                         rs = ps.executeQuery();
                     } else {
-                        ps = conn.prepareStatement("Select * from Attendance where Date =? Order by Attendance desc");
-                        ps.setString(1, txt);
+                        ps = conn.prepareStatement("Select * from Attendance where  SubId in (select SubID from subject where TId=?)  Date =? Order by Attendance desc");
+                        ps.setString(2, txt);
+                        ps.setInt(1, TId);
                         rs = ps.executeQuery();
                     }
-
+                    int Absent=0,present=0;
                     while (rs.next()) {
                         String temp;
                         String name = "";
@@ -76,7 +80,6 @@
                         int AId =rs.getInt("AId");
                         int SId = rs.getInt("SId");
                         String Subject = "";
-                        int TId = 0;
                         //  for name and rollno
                         PreparedStatement ps1 = conn.prepareStatement("Select * from Student where SId=?");
                         ps1.setInt(1, SId);
@@ -110,9 +113,10 @@
                         //enf for displaying teacher name
                         if (rs.getInt("attendance") == 1) {
                             temp = "Present";
-
+                            present+=1;
                         } else {
                             temp = "Absent";
+                            Absent+=1;
                         }
 
                 %>  
@@ -125,8 +129,10 @@
                     <td><%=Subject%></td>
                     <td><a href="deleteattendance.jsp?aid=<%=AId%>">Delete record</a></td></tr>
                     <%
-        }}%>
+        }%>
             </table>
         </div>
+        <h3 style="text-align: center"><%=present%> were present, <%=Absent%> were absent</h3>
+            <%}%>
     </body>
 </html>
