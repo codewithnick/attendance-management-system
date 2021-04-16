@@ -13,8 +13,8 @@
 <%@page import="java.sql.Connection"%>
 <%@ include file="header.jsp" %>
 <%
-    //Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/attendance?useSSL=false","root","root");
-    if(request.getParameter("Submit")!=null){
+   
+    if(request.getParameter("submit")!=null){
         
        // Statement stmt=conn.createStatement();
         if((request.getParameter("sid")!=null)){
