@@ -13,7 +13,7 @@
     </head>
     <body>
         <%
-        
+            session.setAttribute("SId",null);
             response.sendRedirect("student.html");
             Cookie cookie = null;
             Cookie[] cookies = null;

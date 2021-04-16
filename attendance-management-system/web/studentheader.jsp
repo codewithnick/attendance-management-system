@@ -25,12 +25,14 @@
             java.sql.Date sqlDate = new java.sql.Date(date.getTime());
             //default will change later
            // int sid = 101;
-            int sid;
-            sid=(Integer)session.getAttribute("SId");
+           int sid;
             
-            if(session.getAttribute("SId")==null){
+            
+            if(session.getAttribute("SId")== null){
 %><script> location.href="error.html" ;</script><%
-    }
+    return;}
+
+            sid=(Integer)session.getAttribute("SId");
 %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
