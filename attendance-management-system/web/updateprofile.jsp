@@ -29,13 +29,15 @@
                 message="Profile Updated Successfully";
             }
             else{
-                message="Profile not updated";
+                message="Profile updation failed";
             }
    }
 %>
-
-<div class="container">
-    <h2>Update profile</h2>
+<head>
+    <link rel="stylesheet" href="css\style.css"
+</head>
+<div>
+    <h2 align="center">You can update your profile here</h2>
     <form action="">
         <% 
             String sql="select * from teacher where TId=?";
@@ -54,15 +56,19 @@
                 password=r.getString("Password");
             }
         %>
-        Name:<input type="text" name="TName" value="<%=name%>"></br></br>
-        Phone<input type="text" name="Tphone" value="<%=contact%>"></br></br>
-        Email<input type="email" name="Temail" value="<%=email%>"></br></br>
-        Password<input type="text" name="TPassword" value="<%=password%>"></br></br>
-        <input type="submit" value="Update" name="Tupdate"></br></br>
+        <table align="center" class="updateteacherprofile">
+            
+            <tr><td>Name</td><td><input type="text" name="TName" value="<%=name%>"></td></tr>
+        <tr><td>Phone</td><td><input type="text" name="Tphone" value="<%=contact%>"></td></tr>
+        <tr><td>Email</td><td><input type="text" name="Temail" value="<%=email%>"></td></tr>
+        <tr><td>Password</td><td><input type="text" name="TPassword" value="<%=password%>"></td></tr>
+        <tr><td colspan="2"></td></tr>
+        <tr><td colspan="2" align="center"><input type="submit" value="UPDATE" name="Tupdate"></td></tr>
+        </table>
+        <br>
+        <br>
         <% if(!message.equals("")){ %>
-            <div class="massage"><p><%= message%></p></div>
+            <div style="padding:10px; display:inline-block ;position:relative ;left:43%;font-size:16px; font-weight:bold;background-color:black;color:#32a852; height:50px;"><p><%= message%></p></div>
           <%  }  %>
     </form>
 </div>
-
-<%@ include file="footer.jsp" %>
