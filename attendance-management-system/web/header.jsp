@@ -12,7 +12,8 @@
 <%
     Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/attendance?useSSL=false","root","root");
     if(session.getAttribute("TId")==null)
-    {%><script> location.href="error.html" ;</script><%}
+    {%><script> location.href="error.html" ;</script><%
+    return;}
 %>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>

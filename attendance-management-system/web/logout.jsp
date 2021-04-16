@@ -14,7 +14,7 @@
     <body>
         <%
         
-            session.setAttribute("isTeacherLogin", false);
+            session.setAttribute("isTeacherLogin", null);
             response.sendRedirect("teacher.html");
             Cookie cookie = null;
             Cookie[] cookies = null;
