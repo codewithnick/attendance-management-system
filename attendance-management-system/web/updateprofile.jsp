@@ -8,6 +8,7 @@
 <%@page import="java.sql.PreparedStatement"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ include file="header.jsp" %>
+<title>Update Profile</title>
 <%
    String message="";
    if(request.getParameter("Tupdate")!=null){
