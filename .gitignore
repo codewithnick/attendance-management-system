@@ -1,3 +1,4 @@
+  
 /attendance-management-system/build/
 /attendance-management-system/dist/
 /attendance-management-system/nbproject/private/
@@ -5,6 +6,6 @@
 /attendance-management-system/web/WEB-INF/
 /.vs/
 /build/
-attendance-management-system/nbproject/genfiles.properties
-attendance-management-system/nbproject/build-impl.xml
-attendance-management-system/Format.java
+/attendance-management-system/nbproject/genfiles.properties
+/attendance-management-system/nbproject/build-impl.xml
+/attendance-management-system/Format.java
