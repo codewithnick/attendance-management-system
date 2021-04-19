@@ -57,7 +57,7 @@
                         ps.setInt(1, TId);
                         rs = ps.executeQuery();
                     } else if (dropdown.equals("rollno")) {
-                        ps = conn.prepareStatement("Select * from Attendance where SubId in (select SubID from subject where TId=?) and SId in(Select SId from Student where RollNo= ?) Order by Attendance desc");
+                        ps = conn.prepareStatement("Select * from Attendance where SubId in (select SubID from subject where TId=?) and SId =(Select SId from Student where RollNo= ?) Order by Attendance desc");
                         ps.setInt(1, TId);
                         ps.setString(2, txt);
                         rs = ps.executeQuery();
@@ -67,7 +67,7 @@
                         ps.setString(2, txt);
                         rs = ps.executeQuery();
                     } else {
-                        ps = conn.prepareStatement("Select * from Attendance where  SubId in (select SubID from subject where TId=?)  Date =? Order by Attendance desc");
+                        ps = conn.prepareStatement("Select * from Attendance where  SubId in (select SubID from subject where TId=?) and  Date =? Order by Attendance desc");
                         ps.setString(2, txt);
                         ps.setInt(1, TId);
                         rs = ps.executeQuery();
