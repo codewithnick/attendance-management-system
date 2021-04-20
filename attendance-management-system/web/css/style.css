@@ -1,13 +1,3 @@
-/*
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
-*/
-/* 
-    Created on : Mar 27, 2021, 8:53:33 PM
-    Author     : PRAJAPATI GAURAV
-*/
-
 .logo{
     
     margin-top: 10px;
@@ -36,20 +26,14 @@ and open the template in the editor.
 }
 body{
     background-color: #C0C0C0;
-font-weight:bold; 
-font-size: 16px; 
 }
 .editpage{
-    width: 85%;
+        width: 85%;
      background-color: #b76e79;
 }
-input [type="text"]{
-    font-size:16px; 
+input{
+    font-size:14px; 
     font-weight:bold;
-}
-input [type="submit"]{
-    font-size:16px;
-    font-weight: bold; 
     width:20em;
 }
 .updateteacherprofile{
@@ -62,9 +46,9 @@ padding: 20px;
     
 }
 select{
-    width:100%;
- font-weight: bold;
-font-size: 16px;  
+    width:20em;
+    font-weight: bold;
+    font-size: 16px;  
    
 }
 .addsub{    
@@ -85,15 +69,10 @@ font-size: 16px;
 width: 30%;
 background-color: #a88932;
 font-weight: bold;
-font-size: 16px;
-border-radius: 25px;
-padding: 20px;
+font-size: 14px;
     
 }
-table tr td{
-  font-weight: bold;
-font-size: 16px;   
-}
+
 .studentheader{
     font-size: 16px;
     font-weight: bold;
@@ -109,6 +88,12 @@ font-size: 16px;
 color: white;
     
 }
+table{
+    
+   border-radius: 25px;
+  padding: 20px;
+
+}
 .tables table{ 
 width: 85%;
 text-align: center;
@@ -122,14 +107,11 @@ background-color: #820d38;
 font-weight: bold;
 font-size: 16px;
 color: white;
-   border-radius: 25px;
-  padding: 20px;
+  
 
 }
 .teacherRegister{
    width: 40%;
-   border-radius: 25px;
-  padding: 20px;
   background-color:#3d1422 ;
   font-weight: bold;
     font-size: 16px;
@@ -144,7 +126,7 @@ background-color: #183C28;
 color: white;
 font-weight: bold;
 font-size: 16px; 
-    
+   
 }
 
 .studentRegister{
@@ -153,8 +135,6 @@ background-color: #a11212;
 font-weight: bold;
 font-size: 16px;
 color: white;
-border-radius: 25px;
-  padding: 20px;
 }
 
 .studentLogin{
@@ -163,12 +143,4 @@ background-color: #4a0101;
 font-weight: bold;
 font-size: 16px;
 color: white;
-border-radius: 25px;
-  padding: 20px;
-}
-.searchbutton{
-background-image: url('css/search.jpg');
-background-repeat: no-repeat;
-background-position: left;
-padding-left: 5px;
 }
