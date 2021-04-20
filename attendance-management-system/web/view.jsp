@@ -132,7 +132,7 @@
         }%>
             </table>
         </div>
-        <h3 style="text-align: center"><%=present%> were present, <%=Absent%> were absent</h3>
+        <h3 style="padding: 5px;display:inline-block ;position:relative ;left:40%;font-size:16px; font-weight:bold;color:#072f5f; height:50px;"><%=present%> were present and <%=Absent%> were absent</h3>
             <%}%>
     </body>
 </html>

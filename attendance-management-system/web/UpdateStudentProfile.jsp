@@ -37,13 +37,13 @@
         <title>Update Student Profile</title>
         <link rel="stylesheet" href="css/style.css"/>
     </head>
-<div class="container">
+    <body>
+<div>
     <h1 align="center">You can update your profile here</h1>
     <form action="">
         <% 
             String sql="select * from student where SId=?";
             PreparedStatement ps=conn.prepareStatement(sql);
-            //sid=(Integer)session.getAttribute("SId");
             ps.setInt(1,sid); 
             ResultSet r=ps.executeQuery();
             String name="";
@@ -61,11 +61,10 @@
                 sem =r.getInt("Sem");
             }
         %>
-        <table align="center"class="updatestudentprofile">
-        
+        <table align="center" class="updatestudentprofile">
             <tr><td>Enter Name</td><td><input type="text" name="SName" value="<%=name%>"></td></tr>
             <tr><td>Enter Contact Number</td><td><input type="text" name="Sphone" value="<%=contact%>"></td></tr>
-            <tr><td>Enter Email ID</td><td><input type="email" name="Temail" value="<%=email%>"></td></tr>
+            <tr><td>Enter Email ID</td><td><input type="text" name="Temail" value="<%=email%>"></td></tr>
             <tr><td>Enter Password</td><td><input type="text" name="TPassword" value="<%=password%>"></td></tr>
             <tr><td>Enter Roll No</td><td><input type="text" name="RollNo" value="<%=rollno%>"></td></tr>
             <tr><td>Enter Semester</td><td>
@@ -86,8 +85,7 @@
         <br>
         <% if(!message.equals("")){ %>
             <div style="padding:10px; display:inline-block ;position:relative ;left:43%;font-size:16px; font-weight:bold;background-color:black;color:#a88932; height:50px;"><p><%= message%></p></div>
-          <%  } 
-%>
-    </form>
-</div>
-
+          <%  } %>
+        </form>
+    </div>
+</body>
